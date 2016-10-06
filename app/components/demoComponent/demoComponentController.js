@@ -19,18 +19,32 @@
 		function sendMessage(text) {
 			vm.messages.push(text);
 
-			$http({
-				method: 'GET',
-				url: 'https://jsonplaceholder.typicode.com/posts/1'
-			}).then(function successCallback(response) {
+			$http.post('/donalbot', { data: text }).then(successCallback, errorCallback);
+
+			function successCallback(response) {
 
 				vm.messages.push(response.data);
 
 				vm.availableOptions = OPTS;
 
-			}, function errorCallback(error) {
+			}
+
+			function errorCallback(error) {
 				console.log(error);
-			});
+			}
+
+			// $http({
+			// 	method: 'POST',
+			// 	url: 'https://jsonplaceholder.typicode.com/posts/1'
+			// }).then(function successCallback(response) {
+
+			// 	vm.messages.push(response.data);
+
+			// 	vm.availableOptions = OPTS;
+
+			// }, function errorCallback(error) {
+			// 	console.log(error);
+			// });
 
 			vm.inputMessage = '';
 		}
