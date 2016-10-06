@@ -19,7 +19,13 @@
 		function sendMessage(text) {
 			vm.messages.push(text);
 
-			$http.post('/donalbot', { data: text }).then(successCallback, errorCallback);
+			var ajaxData = {};
+			ajaxData.msgdata = text;
+			// if (contextdata) {
+			// 	ajaxData.context = contextdata;
+			// }
+
+			$http.post('/donalbot', ajaxData).then(successCallback, errorCallback);
 
 			function successCallback(response) {
 
