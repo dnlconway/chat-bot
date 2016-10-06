@@ -1,10 +1,11 @@
+
 <html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-      Donal BOT
+      D BOT
     </title>
     <link rel="stylesheet"
         type="text/css"
@@ -18,7 +19,7 @@
       </div>
       <div id="id_contextdump"></div>
 
-      <h1>Donal BOT</h1>
+      <h1>D BOT</h1>
       <div id="id_botchathistory">
       </div>
 
@@ -84,8 +85,7 @@
 
         $.ajax({
           type: 'POST',
-          crossDomain: true,
-          url: 'donalbot',
+          url: 'botchat',
           data: ajaxData,
           success: processOK,
           error: processNotOK
