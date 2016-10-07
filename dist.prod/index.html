@@ -36,8 +36,10 @@
                 </div>
                 <div class="off-canvas-content">
                     <div class="marketing-topbar show-for-medium">
-                        <a class="left-off-canvas-toggle menu-icon"><img src="http://www.whitestrailers.com/bot/img/menu.png"></a>
-                        <span class="nav-page">Chat</span>
+                        <div class="top-bar-left">
+                            <a class="left-off-canvas-toggle menu-icon"><img src="http://www.whitestrailers.com/bot/img/menu.png"></a>
+                            <span class="nav-page">Chat</span>
+                        </div>
                         <div class="top-bar-middle">
                             <a href="#"><img class="logo" src="http://www.whitestrailers.com/bot/img/logo.png"></a>
                         </div>
@@ -95,8 +97,10 @@
                                 </div>
                                 <div class="columns large-3 medium-3 small-10 right-callout">
                                     <img class="text-center animated slideInDown" src="http://www.whitestrailers.com/bot/img/bot-profile.png" alt="Bot Profile Image">
+
                                     <p class="text-center"><span class="bot-name">Smart Move</span><br><span class="bot-job lobster">Property Bot</span></p>
-                                    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in lectus commodo, faucibus dolor eget, faucibus neque.</p>
+                                    <p class="text-center">The danger of the past was that men became slaves. The danger of the future is that <strong>men may become robots</strong>.</p>
+
                                     <a class="centered btn-callout">Mortgage Calculator</a>
                                 </div>
                             </div>
@@ -104,7 +108,7 @@
                                 <div class="columns border large-9 medium-9 small-12 small-centered row-fixed">
                                     <a href="#"><img alt="Simley" class="fake-btn" src="http://www.whitestrailers.com/bot/img/fake-btns.png"></a>
                                     <a href="" class="rnd-btn" onclick="javascript:onChatClick(event)">+</a>
-                                    <input id="id_chattext" class="chat-input" type="search" placeholder="Ask Freddie a question..." autofocus/>
+                                    <input id="id_chattext" class="chat-input" type="search" placeholder="Ask Smart Move a question..." autofocus/>
 
 
                                 </div>
@@ -234,11 +238,11 @@
 
                                             if (who === 'Bot') {
                                                 // function botDelay() {
-                                                    return '<div class="bot-wrapper"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot animated pulse">' + text + '</div>';
+                                                    return '<div class="bot-wrapper animated pulse"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot">' + text + '</div>';
                                                 // }
                                                 // return setTimeout(botDelay, 2000);
                                             } else {
-                                                return '<div class="human-wrapper"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human animated pulse">' + text + '</div>';
+                                                return '<div class="human-wrapper animated pulse"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human">' + text + '</div>';
                                             }
                                         }
 
@@ -271,14 +275,10 @@
                                             }
 
                                             // $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
+
                                             var objDiv = $('#id_botchathistory');
                                             if (objDiv.length > 0) {
                                                 objDiv[0].scrollTop = objDiv[0].scrollHeight;
-                                            
-//                                                var scrollHeight = objDiv[0].scrollHeight;
-//                                                objDiv[0].animate({
-//                                                    scrollTop: "400px"
-//                                                }, 500);
                                             }
                                         }
 

@@ -269,10 +269,13 @@ div[role=main] section.demo {
 }
 
 .chat-area {
-    background: #f8f7f7;
+    background-color: #f8f7f7;
     height: 100vh;
     overflow: scroll;
     padding: 100px 30px 90px;
+    background-image: url('http://www.whitestrailers.com/bot/img/house.png');
+/*   background-image: url('http://www.whitestrailers.com/bot/img/ducks.png');*/
+    background-repeat: repeat;
 }
 
 .right-callout {
@@ -283,7 +286,7 @@ div[role=main] section.demo {
     margin-top: 47px;
     position: relative;
     z-index:2;
-    animation: animatedBackground 10s linear;
+    animation: animatedBackground 5s linear;
     animation-fill-mode: forwards;
 }
 
@@ -306,7 +309,7 @@ div[role=main] section.demo {
 }
 
 .right-callout .btn-callout {
-       border-radius: 70px;
+    border-radius: 70px;
     background: #6dd329;
     color: white;
     text-align: center;
@@ -323,7 +326,7 @@ body {
 }
 
 .chat-area .bot {
-    background: #817cce;
+    background-color: #817cce;
     padding: 7px 20px;
     color: white;
     border-radius: 8px;
@@ -331,6 +334,7 @@ body {
     margin-left: 90px;
     margin-top: 24px;
     position: relative;
+    
 
 }
 
@@ -354,13 +358,13 @@ body {
     content: "";
     width: 0;
     height: 0;
-border-style: solid;
+    border-style: solid;
     border-width: 0 0 13px 16px;
     border-color: transparent transparent #817cce transparent;
     position: absolute;
     top: 2px;
     left: -11px;
-    
+
 }
 
 .chat-area .human:after {
@@ -474,9 +478,19 @@ h1:before {
 
 .top-bar-middle {
     display: inline-block;
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     text-align: center;
+}
+
+.top-bar-left {
+    display: inline-block;
+    width: 10%;
+    vertical-align: middle;
+    height: 61px;
+    float: left;
+    padding-top: 17px;
+
 }
 
 .search-btn {
@@ -542,8 +556,8 @@ ul.btn-options li:hover {
 
 .card {
     background: white;
-/*    width: 42%;
-        max-width: 305px;*/
+    /*    width: 42%;
+            max-width: 305px;*/
     border-radius: 14px;
     display: inline-block;
     margin-right: 15px;
@@ -559,7 +573,7 @@ ul.btn-options li:hover {
 
 .house-desc {
     line-height: 20px;
-        padding: 10px 0;
+    padding: 10px 0;
 }
 
 .house-btn {
