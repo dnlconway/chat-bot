@@ -1,16 +1,16 @@
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Move</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Lobster+Two:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css/foundation.css">
-    <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css/app.css">
-  </head>
-  <body>
-    <div class="off-canvas-wrapper">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Smart Move</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Lobster+Two:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css/foundation.css">
+        <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css/app.css">
+    </head>
+    <body>
+        <div class="off-canvas-wrapper">
             <div class="off-canvas-wrapper-inner">
                 <div class="title-bar hide-for-medium">
                     <div class="title-bar-left">
@@ -41,123 +41,128 @@
 
                         <div class="top-bar-right">
                             <a href="#"><img class="search-btn" src="http://www.whitestrailers.com/bot/img/search-icn.png"></a>
+                        </div>
+                    </div>
+
+                    <div class="header-placeholder"></div>
+                    <div role="main">
+
+                        <div class="container">
+                            <div class="row">
+                                <div id="id_botchathistory" class="columns large-9 medium-9 small-10 chat-area">
+                                    <ul class="btn-options">
+                                        <li>Option 1</li>
+                                        <li>Option 2</li>
+                                        <li>Option 3</li>
+                                    </ul>
                                 </div>
+                                <div class="columns large-3 medium-3 small-10 right-callout">
+                                    <img class="text-center" src="http://www.whitestrailers.com/bot/img/bot-profile.png" alt="Bot Profile Image">
+                                    <p class="text-center"><span class="bot-name">Freddie Smart</span><br><span class="bot-job lobster">Property Bot</span></p>
+                                    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in lectus commodo, faucibus dolor eget, faucibus neque.</p>
+                                    <a class="centered btn-callout">Callout</a>
                                 </div>
-
-                                <div class="header-placeholder"></div>
-                                <div role="main">
-
-                                    <div class="container">
-                                        <div class="row">
-                                            <div id="id_botchathistory" class="columns large-9 medium-9 small-10 chat-area">
-                                            </div>
-                                            <div class="columns large-3 medium-3 small-10 right-callout">
-                                                <img class="text-center" src="http://www.whitestrailers.com/bot/img/bot-profile.png" alt="Bot Profile Image">
-                                                <p class="text-center"><span class="bot-name">Freddie Smart</span><br><span class="bot-job lobster">Property Bot</span></p>
-                                                <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in lectus commodo, faucibus dolor eget, faucibus neque.</p>
-                                                <a class="centered btn-callout">Callout</a>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="columns border large-9 medium-9 small-12 small-centered row-fixed">
-                                                <a href="#"><img alt="Simley" class="fake-btn" src="http://www.whitestrailers.com/bot/img/fake-btns.png"></a>
-                                                <a href="" class="rnd-btn" onclick="javascript:onChatClick(event)">+</a>
-                                                <input id="id_chattext" class="chat-input" type="search" placeholder="Ask Freddie a question..." />
+                            </div>
+                            <div class="row">
+                                <div class="columns border large-9 medium-9 small-12 small-centered row-fixed">
+                                    <a href="#"><img alt="Simley" class="fake-btn" src="http://www.whitestrailers.com/bot/img/fake-btns.png"></a>
+                                    <a href="" class="rnd-btn" onclick="javascript:onChatClick(event)">+</a>
+                                    <input id="id_chattext" class="chat-input" type="search" placeholder="Ask Freddie a question..." />
 
 
-                                            </div>
-                                        </div>
-                                    </div><!-- /.container -->
-                                </div><!-- /.main -->
+                                </div>
+                            </div>
+                        </div><!-- /.container -->
+                    </div><!-- /.main -->
 
-    <script src="http://www.whitestrailers.com/bot/js/vendor/jquery.js"></script>
-    <script src="http://www.whitestrailers.com/bot/js/vendor/what-input.js"></script>
-    <script src="http://www.whitestrailers.com/bot/js/vendor/foundation.min.js"></script>
+                    <script src="http://www.whitestrailers.com/bot/js/vendor/jquery.js"></script>
+                    <script src="http://www.whitestrailers.com/bot/js/vendor/what-input.js"></script>
+                    <script src="http://www.whitestrailers.com/bot/js/vendor/foundation.min.js"></script>
 
-    <script type="text/javascript">
+                    <script type="text/javascript">
 
-      $(document).ready(function() {
-          javascriptCheck();
-          $('#id_contextdump').hide();
-          $('#id_chattext').bind("enterKey",function(e){
-          	onChatClick(event);
-          });
-          $('#id_chattext').keyup(function(e){
-          	if(e.keyCode == 13) {
-          		$(this).trigger("enterKey");
-          	}
-          });
-      });
+                                                                    $(document).ready(function () {
+                                                                        javascriptCheck();
+                                                                        $('#id_contextdump').hide();
+                                                                        $('#id_chattext').bind("enterKey", function (e) {
+                                                                            onChatClick(event);
+                                                                        });
+                                                                        $('#id_chattext').keyup(function (e) {
+                                                                            if (e.keyCode == 13) {
+                                                                                $(this).trigger("enterKey");
+                                                                            }
+                                                                        });
+                                                                    });
 
-      // if javascript is enabled on the browser then can
-      // remove the warning message
-      function javascriptCheck() {
-        $('#no-script').remove();
-      }
+                                                                    // if javascript is enabled on the browser then can
+                                                                    // remove the warning message
+                                                                    function javascriptCheck() {
+                                                                        $('#no-script').remove();
+                                                                    }
 
-      function createNewDiv(who, message) {
+                                                                    function createNewDiv(who, message) {
 
-        if (who === 'Bot') {
-			return '<div class="bot-wrapper"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot">' + message + '</div>';
-        } else {
-        	return '<div class="human-wrapper"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human">' + message + '</div>';
-        }
-      }
+                                                                        if (who === 'Bot') {
+                                                                            return '<div class="bot-wrapper"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot">' + message + '</div>';
+                                                                        } else {
+                                                                            return '<div class="human-wrapper"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human">' + message + '</div>';
+                                                                        }
+                                                                    }
 
-      function chat(person, txt) {
-        $('#id_botchathistory').append(createNewDiv(person, txt));
-      }    
+                                                                    function chat(person, txt) {
+                                                                        $('#id_botchathistory').append(createNewDiv(person, txt));
+                                                                    }
 
-      function processOK(response) {
-        console.log(response);
-        console.log(response.botresponse.messageout);
-        console.log(response.botresponse.messageout.output.text);
-        console.log(response.botresponse.messageout.context);
-        chat('Bot', response.botresponse.messageout.output.text);
-        $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
+                                                                    function processOK(response) {
+                                                                        console.log(response);
+                                                                        console.log(response.botresponse.messageout);
+                                                                        console.log(response.botresponse.messageout.output.text);
+                                                                        console.log(response.botresponse.messageout.context);
+                                                                        chat('Bot', response.botresponse.messageout.output.text);
+                                                                        $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
 
-		var objDiv = $('#id_botchathistory');
-		if (objDiv.length > 0) {
-			objDiv[0].scrollTop = objDiv[0].scrollHeight;
-		}
-	  }
+                                                                        var objDiv = $('#id_botchathistory');
+                                                                        if (objDiv.length > 0) {
+                                                                            objDiv[0].scrollTop = objDiv[0].scrollHeight;
+                                                                        }
+                                                                    }
 
-      function processNotOK() {
-        chat('Error', 'Error whilst attempting to talk to Bot');
-      }
+                                                                    function processNotOK() {
+                                                                        chat('Error', 'Error whilst attempting to talk to Bot');
+                                                                    }
 
-      function invokeAjax(message) {
-        var contextdata = $('#id_contextdump').data('convContext');
-        console.log('checking stashed context data');
-        console.log(contextdata);
+                                                                    function invokeAjax(message) {
+                                                                        var contextdata = $('#id_contextdump').data('convContext');
+                                                                        console.log('checking stashed context data');
+                                                                        console.log(contextdata);
 
 
-        //var ajaxData = "msgdata=" + message;
-        var ajaxData = {};
-        ajaxData.msgdata = message;
-        if (contextdata) {
-          ajaxData.context = contextdata;    
-        }
+                                                                        //var ajaxData = "msgdata=" + message;
+                                                                        var ajaxData = {};
+                                                                        ajaxData.msgdata = message;
+                                                                        if (contextdata) {
+                                                                            ajaxData.context = contextdata;
+                                                                        }
 
-        $.ajax({
-          type: 'POST',
-          url: 'botchat',
-          data: ajaxData,
-          success: processOK,
-          error: processNotOK
-        });
-      }
+                                                                        $.ajax({
+                                                                            type: 'POST',
+                                                                            url: 'botchat',
+                                                                            data: ajaxData,
+                                                                            success: processOK,
+                                                                            error: processNotOK
+                                                                        });
+                                                                    }
 
-      // User has entered some text.
-      function onChatClick(e) {
-      	e.preventDefault();
-        var txt = $('#id_chattext').val();
-        chat('You', txt);
-        invokeAjax(txt);
-        $('#id_chattext').val('');
-      }
+                                                                    // User has entered some text.
+                                                                    function onChatClick(e) {
+                                                                        e.preventDefault();
+                                                                        var txt = $('#id_chattext').val();
+                                                                        chat('You', txt);
+                                                                        invokeAjax(txt);
+                                                                        $('#id_chattext').val('');
+                                                                    }
 
-    </script>
+                    </script>
 
-  </body>
-</html>
+                    </body>
+                    </html>
