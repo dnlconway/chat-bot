@@ -125,13 +125,14 @@
                                             $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
 
                                             var objDiv = $('#id_botchathistory');
-                                            function scrolll(){
-                                                smoothScroll.animateScroll( objDiv[0].scrollHeight; );
-                                            }
+
                                             if (objDiv.length > 0) {
                                                 //objDiv[0].scrollTop = objDiv[0].scrollHeight;
+                                                function scrolll() {
+                                                    smoothScroll.animateScroll(objDiv[0].scrollHeight);
+                                                }
                                                 objDiv[0].scrolll();
-                                                                                              
+
                                             }
                                         }
 
