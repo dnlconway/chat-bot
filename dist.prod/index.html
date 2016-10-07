@@ -48,7 +48,7 @@
 
                                     <div class="container">
                                         <div class="row">
-                                            <div class="columns large-9 medium-9 small-10 chat-area">
+                                            <div id="id_botchathistory" class="columns large-9 medium-9 small-10 chat-area">
 
 
                                                 <div class="bot-wrapper">
@@ -99,9 +99,9 @@
       }
 
       function createNewDiv(who, message) {
-        var txt = who + ' : ' + message;
+        var text = who + ' : ' + message;
 
-        return $('body').html('<div class="human-wrapper"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human"></div>' + text + '</div>');
+        return '<div class="human-wrapper"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human"></div>' + text + '</div>';
       }
 
       function chat(person, txt) {
