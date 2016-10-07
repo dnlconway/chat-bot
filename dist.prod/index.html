@@ -72,7 +72,7 @@
                                         <div class="row">
                                             <div class="columns border large-9 medium-9 small-12 small-centered row-fixed">
                                                 <a href="#"><img alt="Simley" class="fake-btn" src="http://www.whitestrailers.com/bot/img/fake-btns.png"></a>
-                                                <a href="" class="rnd-btn" onclick="javascript:onChatClick()">+</a>
+                                                <a href="" class="rnd-btn" onclick="javascript:onChatClick(event)">+</a>
                                                 <input id="id_chattext" class="chat-input" type="search" placeholder="Ask Freddie a question..." />
 
 
@@ -144,7 +144,8 @@
       }
 
       // User has entered some text.
-      function onChatClick() {
+      function onChatClick(e) {
+      	e.preventDefault();
         var txt = $('#id_chattext').val();
         chat('You', txt);
         invokeAjax(txt);
