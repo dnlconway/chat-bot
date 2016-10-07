@@ -199,6 +199,7 @@
                                                 }
                                             });
 
+                                            botInUse = 'Bot';
                                             // $.get( "https://jornodered.mybluemix.net/tweets", function( data ) {
                                             // 	console.log(data);
                                             // });
@@ -246,18 +247,15 @@
 
                                         function processOK(response) {
                                             console.log(response);
-                                            console.log(response.botresponse.messageout);
-                                            console.log(response.botresponse.messageout.output.text);
-                                            console.log(response.botresponse.messageout.context);
 
-                                            if (response.botresponse.messageout.output.text instanceof Array &&
-                                                    response.botresponse.messageout.output.text.length > 0 &&
-                                                    response.botresponse.messageout.output.text[0].indexOf('found the following properties') !== -1) {
+                                            if (response instanceof Array &&
+                                                    response.length > 0 &&
+                                                    response[0].indexOf('found the following properties') !== -1) {
                                                 $('#owl-example').show();
-                                                chat('Bot', response.botresponse.messageout.output.text[0]);
+                                                chat('Bot', response[0]);
                                             } else {
                                                 $('#owl-example').hide();
-                                                chat('Bot', response.botresponse.messageout.output.text);
+                                                chat('Bot', response);
                                             }
 
                                             $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
@@ -287,13 +285,23 @@
                                                 ajaxData.context = contextdata;
                                             }
 
-                                            $.ajax({
-                                                type: 'POST',
-                                                url: 'botchat',
-                                                data: ajaxData,
-                                                success: processOK,
-                                                error: processNotOK
-                                            });
+                                            if (botInUse === 'Bot') {
+	                                            $.ajax({
+	                                                type: 'POST',
+	                                                url: 'botchat',
+	                                                data: ajaxData,
+	                                                success: processOK,
+	                                                error: processNotOK
+	                                            });                                            	
+                                            } else {
+	                                            $.ajax({
+	                                                type: 'POST',
+	                                                url: 'botchat',
+	                                                data: ajaxData,
+	                                                success: processOK,
+	                                                error: processNotOK
+	                                            });	
+                                            }
                                         }
 
                                         // User has entered some text.
