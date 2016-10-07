@@ -77,12 +77,14 @@
                     </div><!-- /.main -->
 
                     <script src="http://www.whitestrailers.com/bot/js/vendor/jquery.js"></script>
+                    <script src="http://www.whitestrailers.com/bot/js/vendor/smooth-scroll.js"></script>
                     <script src="http://www.whitestrailers.com/bot/js/vendor/what-input.js"></script>
                     <script src="http://www.whitestrailers.com/bot/js/vendor/foundation.min.js"></script>
 
                     <script type="text/javascript">
 
                                         $(document).ready(function () {
+                                            smoothScroll.init();
                                             javascriptCheck();
                                             $('#id_contextdump').hide();
                                             $('#id_chattext').bind("enterKey", function (e) {
@@ -124,7 +126,10 @@
 
                                             var objDiv = $('#id_botchathistory');
                                             if (objDiv.length > 0) {
-                                                objDiv[0].scrollTop = objDiv[0].scrollHeight;
+                                                //objDiv[0].scrollTop = objDiv[0].scrollHeight;
+                                                objDiv[0].animateScroll( 750 );
+                                                
+//                                                smoothScroll.animateScroll( 750 );
                                             }
                                         }
 
