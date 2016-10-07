@@ -113,6 +113,10 @@
         console.log(response.botresponse.messageout);
         console.log(response.botresponse.messageout.output.text);
         console.log(response.botresponse.messageout.context);
+
+        if (response.botresponse.messageout.output.text instanceof Array && response.botresponse.messageout.output.text.length > 0 && response.botresponse.messageout.output.text[0] === 'The areas I do know about are') {
+        	console.log('options');
+        }
         chat('Bot', response.botresponse.messageout.output.text);
         $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
 
