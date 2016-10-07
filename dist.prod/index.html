@@ -5,6 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Move</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Lobster+Two:400,700" rel="stylesheet">
     <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css/foundation.css">
     <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css/app.css">
   </head>
@@ -39,7 +40,7 @@
                         </div>
 
                         <div class="top-bar-right">
-                            <a href="#"><img class="search-btn" src="http://www.whitestrailers.com/bot/img/search-icn.png">
+                            <a href="#"><img class="search-btn" src="http://www.whitestrailers.com/bot/img/search-icn.png"></a>
                                 </div>
                                 </div>
 
@@ -95,12 +96,11 @@
       }
 
       function createNewDiv(who, message) {
-        var text = who + ' : ' + message;
 
         if (who === 'Bot') {
-			return '<div class="bot-wrapper"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot">' + text + '</div>';
+			return '<div class="bot-wrapper"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot">' + message + '</div>';
         } else {
-        	return '<div class="human-wrapper"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human">' + text + '</div>';
+        	return '<div class="human-wrapper"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human">' + message + '</div>';
         }
       }
 
