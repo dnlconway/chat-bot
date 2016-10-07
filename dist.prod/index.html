@@ -50,6 +50,15 @@
                                     <div class="container">
                                         <div class="row">
                                             <div id="id_botchathistory" class="columns large-9 medium-9 small-10 chat-area">
+                                            	<button id="button1">
+                                            		<span class="btn-callout"></span>
+                                            	</button>
+                                            	<button id="button2">
+                                            		<span class="btn-callout"></span>
+                                            	</button>
+                                            	<button id="button3">
+                                            		<span class="btn-callout"></span>
+                                            	</button>
                                             </div>
                                             <div class="columns large-3 medium-3 small-10 right-callout">
                                                 <img class="text-center" src="http://www.whitestrailers.com/bot/img/bot-profile.png" alt="Bot Profile Image">
@@ -115,9 +124,11 @@
         console.log(response.botresponse.messageout.context);
 
         if (response.botresponse.messageout.output.text instanceof Array && response.botresponse.messageout.output.text.length > 0 && response.botresponse.messageout.output.text[0] === 'The areas I do know about are') {
-        	console.log('options');
+        	$("#button1 span").text(response.botresponse.messageout.output.text[1]);
+        	$("#button2 span").text(response.botresponse.messageout.output.text[2]);
+        	$("#button3 span").text(response.botresponse.messageout.output.text[3]);
         }
-        chat('Bot', response.botresponse.messageout.output.text);
+        chat('Bot', response.botresponse.messageout.output.text[4]);
         $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
 
 		var objDiv = $('#id_botchathistory');
