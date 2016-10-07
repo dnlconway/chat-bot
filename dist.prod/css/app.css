@@ -275,10 +275,9 @@ div[role=main] section.demo {
 
 .chat-area {
     background: #f8f7f7;
-    margin-top: 47px;
     height: 100vh;
     overflow: scroll;
-    padding: 32px;
+    padding: 100px 30px 90px;
 }
 
 .right-callout {
@@ -449,7 +448,7 @@ h1:before {
 }
 
 .chat-input {
-    width: 70%;
+    width: 60%;
     margin-left: 13px;
     float: left;
     font-size: 18px;
@@ -468,7 +467,7 @@ h1:before {
 
 .top-bar-middle {
     display: inline-block;
-    width: 80%;
+        width: 70%;
     margin: 0 auto;
     text-align: center;
 }
