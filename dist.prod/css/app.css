@@ -359,14 +359,13 @@ body {
     content: "";
     width: 0;
     height: 0;
-
-
+border-style: solid;
+    border-width: 0 0 13px 16px;
+    border-color: transparent transparent #817cce transparent;
     position: absolute;
     top: 2px;
     left: -11px;
-    width: 50px;
-    height: 50px;
-    background: #999;
+    
 }
 
 .chat-area .human:after {
