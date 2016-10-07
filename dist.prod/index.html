@@ -51,7 +51,7 @@
                                         <div class="row">
                                             <div id="id_botchathistory" class="columns large-9 medium-9 small-10 chat-area">
                                             	<button id="button1">
-                                            		<span class="btn-callout"></span>
+                                            		<span class="btn-callout" on-click=""></span>
                                             	</button>
                                             	<button id="button2">
                                             		<span class="btn-callout"></span>
@@ -170,6 +170,16 @@
         chat('You', txt);
         invokeAjax(txt);
         $('#id_chattext').val('');
+      }
+
+      // User has selected an option.
+      function onChatClick(e, text) {
+      	e.preventDefault();
+        chat('You', text);
+        invokeAjax(text);
+        $('#button1').hide();
+        $('#button2').hide();
+        $('#button3').hide();
       }
 
     </script>
