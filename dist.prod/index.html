@@ -249,8 +249,8 @@
                                             console.log(response);
 
                                             var houses = false;
-                                            for (vari=0; i<response.length; i++) {
-                                            	if (response[0].indexOf('found the following properties') !== -1) {
+                                            for (var i=0; i<response.length; i++) {
+                                            	if (response[i].indexOf('found the following properties') !== -1) {
                                             		houses = true;
                                             		response = response.splice(3,3);
                                             	}
