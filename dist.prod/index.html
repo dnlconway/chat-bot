@@ -101,7 +101,11 @@
       function createNewDiv(who, message) {
         var text = who + ' : ' + message;
 
-        return '<div class="human-wrapper"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human"></div>' + text + '</div>';
+        if (who === 'Bot') {
+			return '<div class="bot-wrapper"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot"></div>' + text + '</div>';
+        } else {
+        	return '<div class="human-wrapper"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human"></div>' + text + '</div>';
+        }
       }
 
       function chat(person, txt) {
@@ -149,6 +153,7 @@
         var txt = $('#id_chattext').val();
         chat('You', txt);
         invokeAjax(txt);
+        $('#id_chattext').val('');
       }
 
     </script>
