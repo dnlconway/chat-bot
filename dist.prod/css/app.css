@@ -293,8 +293,8 @@ div[role=main] section.demo {
 }
 
 @keyframes animatedBackground {
-	from { background-position: 92% 0; }
-	to { background-position: 92% 100%; }
+    from { background-position: 92% 0; }
+    to { background-position: 92% 100%; }
 }
 
 .right-callout img {
@@ -547,3 +547,11 @@ ul.btn-options li:hover {
 
 }
 
+.card {
+    background: white;
+    width: 33%;
+    border-radius: 14px;
+    padding: 30px;
+    display: inline-block;
+    margin-right: 15px;
+}
