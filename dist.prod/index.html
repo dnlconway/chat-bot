@@ -198,7 +198,23 @@
                                                     $(this).trigger("enterKey");
                                                 }
                                             });
+
+                                            $.ajax({
+                                                type: 'GET',
+                                                url: 'https://jornodered.mybluemix.net/tweets',
+                                                success: twitterOK,
+                                                error: twitterNotOK
+                                            });
+
                                         });
+
+                                        function twitterOK(response) {
+                                            console.log(response);
+                                        }
+
+                                        function twitterNotOK() {
+                                            chat('Error', 'Error whilst attempting to talk to Bot');
+                                        }
 
                                         // if javascript is enabled on the browser then can
                                         // remove the warning message
@@ -207,13 +223,23 @@
                                         }
 
                                         function createNewDiv(who, message) {
+
+                                        	var text = ""
+				                        	if (response.botresponse.messageout.output.text instanceof Array) {
+				                        		for (var i = response.botresponse.messageout.output.text.length - 1; i >= 0; i--) {
+				                        			text += response.botresponse.messageout.output.text[i];
+				                        		};
+				                        	} else {
+				                        		text = message;
+				                        	}
+
                                             if (who === 'Bot') {
-                                                function botDelay() {
-                                                    return '<div class="bot-wrapper"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot animated pulse">' + message + '</div>';
-                                                }
-                                                return setTimeout(botDelay, 2000);
+                                                // function botDelay() {
+                                                    return '<div class="bot-wrapper"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot animated pulse">' + text + '</div>';
+                                                // }
+                                                // return setTimeout(botDelay, 2000);
                                             } else {
-                                                return '<div class="human-wrapper"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human animated pulse">' + message + '</div>';
+                                                return '<div class="human-wrapper"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human animated pulse">' + text + '</div>';
                                             }
                                         }
 
