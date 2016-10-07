@@ -205,10 +205,6 @@
 
                                             botInUse = 'Bot';
 
-                                            $.get( "https://jornodered.mybluemix.net/tweets", function( data ) {
-                                            	console.log(data);
-                                            });
-
                                         });
 
                                         function twitterOK(response) {
@@ -267,6 +263,23 @@
                                             } else {
                                                 $('#owl-example').hide();
                                                 chat('Bot', response);
+                                            }
+
+                                            if (response[0].indexOf('I can look on social media') !== -1) {
+                                            	$.get( "https://jornodered.mybluemix.net/tweets", function( data ) {
+                                            		var txt = "";
+                                            		if (data.rows[1].ave < 0) {
+                                            			txt = 'Based on social media, this area has below average sentiment rating';
+                                            		} else {
+                                            			if (data.rows[1].ave < 4) {
+                                            				txt = 'Based on social media, this area has good sentiment rating';
+                                            			} else {
+                                            				txt = 'Based on social media, this area has excellemt sentiment rating';
+                                            			}
+                                            		}
+                                            		chat('Bot', txt);
+                                            	});
+
                                             }
 
                                             if (response[0].indexOf('wake up Chatty') !== -1) {
