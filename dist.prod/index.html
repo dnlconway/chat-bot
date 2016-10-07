@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=0.8">
         <title>Smart Move</title>
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Lobster+Two:400,700" rel="stylesheet">
         <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css/foundation.css">
@@ -268,7 +268,10 @@
                                         function createNewDiv(who, message) {
 
                                             if (who === 'Bot') {
-                                                return '<div class="bot-wrapper"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot animated pulse">' + message + '</div>';
+                                                function botDelay() {
+                                                    return '<div class="bot-wrapper"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot animated pulse">' + message + '</div>';
+                                                }
+                                                return setTimeout(botDelay, 2000);
                                             } else {
                                                 return '<div class="human-wrapper"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human animated pulse">' + message + '</div>';
                                             }
