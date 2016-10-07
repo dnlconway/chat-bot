@@ -107,7 +107,13 @@
         console.log(response.botresponse.messageout.context);
         chat('Bot', response.botresponse.messageout.output.text);
         $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
-      }
+
+		var objDiv = $('#id_botchathistory');
+			if (objDiv.length > 0) {
+				objDiv[0].scrollTop = objDiv[0].scrollHeight;
+			}
+		}
+	  }
 
       function processNotOK() {
         chat('Error', 'Error whilst attempting to talk to Bot');
