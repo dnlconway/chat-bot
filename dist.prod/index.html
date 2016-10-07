@@ -123,16 +123,13 @@
                                             console.log(response.botresponse.messageout.context);
                                             chat('Bot', response.botresponse.messageout.output.text);
                                             $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
-
                                             var objDiv = $('#id_botchathistory');
-
                                             if (objDiv.length > 0) {
-                                                //objDiv[0].scrollTop = objDiv[0].scrollHeight;
-                                                function scrolll() {
-                                                    smoothScroll.animateScroll(objDiv[0].scrollHeight);
-                                                }
-                                                objDiv[0].scrolll();
-
+//                                                objDiv[0].scrollTop = objDiv[0].scrollHeight;
+                                                var scrollHeight = objDiv[0].scrollHeight;
+                                                objDiv[0].animate({
+                                                    scrollTop: scrollHeight;
+                                                });
                                             }
                                         }
 
@@ -144,8 +141,6 @@
                                             var contextdata = $('#id_contextdump').data('convContext');
                                             console.log('checking stashed context data');
                                             console.log(contextdata);
-
-
                                             //var ajaxData = "msgdata=" + message;
                                             var ajaxData = {};
                                             ajaxData.msgdata = message;
