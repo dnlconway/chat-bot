@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css/owl.carousel.css">
         <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css//owl.theme.css">
         <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css/app.css">
+        <script src="http://www.whitestrailers.com/bot/js/vendor/jquery.js"></script>
+        <script src="http://www.whitestrailers.com/bot/js/vendor/pace.min.js"></script>
     </head>
     <body>
         <div class="off-canvas-wrapper">
@@ -41,7 +43,7 @@
                             <span class="nav-page">Chat</span>
                         </div>
                         <div class="top-bar-middle">
-                            <a href="#"><img class="logo" src="http://www.whitestrailers.com/bot/img/logo.png"></a>
+                            <a href="#"><img class="logo animated rubberBand" src="http://www.whitestrailers.com/bot/img/logo.png"></a>
                         </div>
 
                         <div class="top-bar-right">
@@ -98,10 +100,10 @@
                                 <div class="columns large-3 medium-3 small-10 right-callout">
                                     <img class="text-center animated slideInDown" src="http://www.whitestrailers.com/bot/img/bot-profile.png" alt="Bot Profile Image">
 
-                                    <p class="text-center"><span class="bot-name">Smart Move</span><br><span class="bot-job lobster">Property Bot</span></p>
-                                    <p class="text-center">The danger of the past was that men became slaves. The danger of the future is that <strong>men may become robots</strong>.</p>
+                                    <p class="text-center animation-time-2 animated fadeIn"><span class="bot-name">Smart Move</span><br><span class="bot-job lobster">Property Bot</span></p>
+                                    <p class="text-center animation-time-2 animated fadeIn">The danger of the past was that men became slaves. The danger of the future is that <strong>men may become robots</strong>.</p>
 
-                                    <a class="centered btn-callout">Mortgage Calculator</a>
+                                    <a class="centered btn-callout animated fadeIn">Mortgage Calculator</a>
                                 </div>
                             </div>
                             <div class="row">
@@ -116,7 +118,8 @@
                         </div><!-- /.container -->
                     </div><!-- /.main -->
 
-                    <script src="http://www.whitestrailers.com/bot/js/vendor/jquery.js"></script>
+                    
+                    
                     <script src="http://www.whitestrailers.com/bot/js/vendor/smooth-scroll.js"></script>
                     <script src="http://www.whitestrailers.com/bot/js/vendor/owl.carousel.min.js"></script>
                     <script src="http://www.whitestrailers.com/bot/js/vendor/what-input.js"></script>
@@ -272,6 +275,11 @@
                                             if (response[0].indexOf('wake up Chatty') !== -1) {
                                             	botInUse = 'Chatty';
                                             	chat('Bot', "Hi, I'm Chatty the chatbot, waht's your name?");	
+                                            }
+                                            
+                                            if(botInUse === 'Chatty';) {
+                                                $('.chat-area').addClass('ducks');
+                                                $('.right-callout').addClass('lego');
                                             }
 
                                             // $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
