@@ -40,52 +40,50 @@
 
                         <div class="top-bar-right">
                             <a href="#"><img class="search-btn" src="http://www.whitestrailers.com/bot/img/search-icn.png">
-                                </div>
-                                </div>
+                        </div>
 
-                                <div class="header-placeholder"></div>
-                                <div role="main">
+                        <div class="header-placeholder"></div>
+                            <div role="main">
 
-                                    <div class="container">
-                                        <div class="row">
-                                            <div id="id_botchathistory" class="columns large-9 medium-9 small-10 chat-area">
+                                <div class="container">
+                                    <div class="row">
+                                        <div id="id_botchathistory" class="columns large-9 medium-9 small-10 chat-area">
 
-
-                                                <div class="bot-wrapper">
-                                                    <img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png">
-                                                    <div class="bot">I don't believe we've met. Would you care to share your name?</div>
-                                                </div>
-
-
-                                                <div class="human-wrapper">
-                                                    <img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png">
-                                                    <div class="human">I don't know!</div>
-                                                </div>
+                                            <div class="bot-wrapper">
+                                                <img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png">
+                                                <div class="bot">I don't believe we've met. Would you care to share your name?</div>
                                             </div>
-                                            <div class="columns large-3 medium-2 small-10 right-callout">
-                                                <img class="text-center" src="http://www.whitestrailers.com/bot/img/bot-profile.png" alt="Bot Profile Image">
-                                                <p class="text-center"><span class="bot-name">Freddie Smart</span><br><span class="bot-job lobster">Property Bot</span></p>
-                                                <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in lectus commodo, faucibus dolor eget, faucibus neque.</p>
-                                                <a class="centered btn-callout">Callout</a>
+
+
+                                            <div class="human-wrapper">
+                                                <img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png">
+                                                <div class="human">I don't know!</div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="columns border large-9 medium-9 small-12 small-centered row-fixed">
-                                                <a href="#"><img alt="Simley" class="fake-btn" src="http://www.whitestrailers.com/bot/img/fake-btns.png"></a>
-                                                <a href="" class="rnd-btn" onclick="javascript:onChatClick()">+</a>
-                                                <input id="id_chattext" class="chat-input" type="search" placeholder="Ask Freddie a question..." />
-
-
-                                            </div>
+                                        <div class="columns large-3 medium-2 small-10 right-callout">
+                                            <img class="text-center" src="http://www.whitestrailers.com/bot/img/bot-profile.png" alt="Bot Profile Image">
+                                            <p class="text-center"><span class="bot-name">Freddie Smart</span><br><span class="bot-job lobster">Property Bot</span></p>
+                                            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in lectus commodo, faucibus dolor eget, faucibus neque.</p>
+                                            <a class="centered btn-callout">Callout</a>
                                         </div>
-                                    </div><!-- /.container -->
-                                </div><!-- /.main -->
+                                    </div>
+                                    <div class="row">
+                                        <div class="columns border large-9 medium-9 small-12 small-centered row-fixed">
+                                            <a href="#"><img alt="Simley" class="fake-btn" src="http://www.whitestrailers.com/bot/img/fake-btns.png"></a>
+                                            <a href="" class="rnd-btn" onclick="javascript:onChatClick()">+</a>
+                                            <input id="id_chattext" class="chat-input" type="search" placeholder="Ask Freddie a question..." />
+
+
+                                        </div>
+                                    </div>
+                                </div><!-- /.container -->
+                            </div><!-- /.main -->
 
     <script src="http://www.whitestrailers.com/bot/js/vendor/jquery.js"></script>
     <script src="http://www.whitestrailers.com/bot/js/vendor/what-input.js"></script>
     <script src="http://www.whitestrailers.com/bot/js/vendor/foundation.min.js"></script>
 
-        <script type="text/javascript">
+    <script type="text/javascript">
 
       $(document).ready(function() {
           javascriptCheck();
@@ -145,6 +143,7 @@
 
       // User has entered some text.
       function onChatClick() {
+      	e.preventDefault();
         var txt = $('#id_chattext').val();
         chat('You', txt);
         invokeAjax(txt);
