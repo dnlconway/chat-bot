@@ -257,19 +257,25 @@
                                             for (var i=0; i<response.length; i++) {
                                             	if (response[i].indexOf('found the following properties') !== -1) {
                                             		houses = true;
-                                            		response = response.splice(3,3);
+                                            		//response = response.splice(0,3).push(response.splice(6,2));
                                             	}
                                             }
 
                                             if (houses) {
                                                 $('#owl-example').show();
-                                                chat('Bot', response[0]);
+                                                chat('Bot', response);
                                             } else {
                                                 $('#owl-example').hide();
                                                 chat('Bot', response);
                                             }
 
-//                                            $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
+                                            if (response.indexOf('wake up Chatty') !== -1) {
+                                            	botInUse = 'Chatty';
+                                            	chat('Bot', "Hi, I'm Chatty the chatbot, waht's your name?");	
+                                            }
+
+                                            // $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
+
                                             var objDiv = $('#id_botchathistory');
                                             if (objDiv.length > 0) {
                                                 objDiv[0].scrollTop = objDiv[0].scrollHeight;
@@ -302,7 +308,7 @@
                                             } else {
 	                                            $.ajax({
 	                                                type: 'POST',
-	                                                url: 'botchat',
+	                                                url: 'kidchat',
 	                                                data: ajaxData,
 	                                                success: processOK,
 	                                                error: processNotOK
