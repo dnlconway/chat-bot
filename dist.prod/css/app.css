@@ -283,12 +283,13 @@ div[role=main] section.demo {
 .right-callout {
     height: 100vh;
     background-image: url('../img/left-bar.png');
-/*    background-position: 92% 100%;*/
+    background-position: 92% 100%;
     background-color: #0b0b0d;
     margin-top: 47px;
     position: relative;
     z-index:2;
-    animation: animatedBackground 40s linear infinite;
+    animation: animatedBackground 10s linear;
+    animation-fill-mode: forwards;
 }
 
 @keyframes animatedBackground {
