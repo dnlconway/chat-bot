@@ -77,7 +77,15 @@
 
       $(document).ready(function() {
           javascriptCheck();
-            $('#id_contextdump').hide();
+          $('#id_contextdump').hide();
+          $('#id_chattext').bind("enterKey",function(e){
+          	onChatClick(event);
+          });
+          $('#id_chattext').keyup(function(e){
+          	if(e.keyCode == 13) {
+          		$(this).trigger("enterKey");
+          	}
+          });
       });
 
       // if javascript is enabled on the browser then can
@@ -90,9 +98,9 @@
         var text = who + ' : ' + message;
 
         if (who === 'Bot') {
-			return '<div class="bot-wrapper"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot"></div>' + text + '</div>';
+			return '<div class="bot-wrapper"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot">' + text + '</div>';
         } else {
-        	return '<div class="human-wrapper"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human"></div>' + text + '</div>';
+        	return '<div class="human-wrapper"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human">' + text + '</div>';
         }
       }
 
