@@ -81,86 +81,86 @@
 
                     <script type="text/javascript">
 
-                                                                    $(document).ready(function () {
-                                                                        javascriptCheck();
-                                                                        $('#id_contextdump').hide();
-                                                                        $('#id_chattext').bind("enterKey", function (e) {
-                                                                            onChatClick(event);
-                                                                        });
-                                                                        $('#id_chattext').keyup(function (e) {
-                                                                            if (e.keyCode == 13) {
-                                                                                $(this).trigger("enterKey");
-                                                                            }
-                                                                        });
-                                                                    });
+                                        $(document).ready(function () {
+                                            javascriptCheck();
+                                            $('#id_contextdump').hide();
+                                            $('#id_chattext').bind("enterKey", function (e) {
+                                                onChatClick(event);
+                                            });
+                                            $('#id_chattext').keyup(function (e) {
+                                                if (e.keyCode == 13) {
+                                                    $(this).trigger("enterKey");
+                                                }
+                                            });
+                                        });
 
-                                                                    // if javascript is enabled on the browser then can
-                                                                    // remove the warning message
-                                                                    function javascriptCheck() {
-                                                                        $('#no-script').remove();
-                                                                    }
+                                        // if javascript is enabled on the browser then can
+                                        // remove the warning message
+                                        function javascriptCheck() {
+                                            $('#no-script').remove();
+                                        }
 
-                                                                    function createNewDiv(who, message) {
+                                        function createNewDiv(who, message) {
 
-                                                                        if (who === 'Bot') {
-                                                                            return '<div class="bot-wrapper"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot">' + message + '</div>';
-                                                                        } else {
-                                                                            return '<div class="human-wrapper"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human">' + message + '</div>';
-                                                                        }
-                                                                    }
+                                            if (who === 'Bot') {
+                                                return '<div class="bot-wrapper"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot">' + message + '</div>';
+                                            } else {
+                                                return '<div class="human-wrapper"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human">' + message + '</div>';
+                                            }
+                                        }
 
-                                                                    function chat(person, txt) {
-                                                                        $('#id_botchathistory').append(createNewDiv(person, txt));
-                                                                    }
+                                        function chat(person, txt) {
+                                            $('#id_botchathistory').append(createNewDiv(person, txt));
+                                        }
 
-                                                                    function processOK(response) {
-                                                                        console.log(response);
-                                                                        console.log(response.botresponse.messageout);
-                                                                        console.log(response.botresponse.messageout.output.text);
-                                                                        console.log(response.botresponse.messageout.context);
-                                                                        chat('Bot', response.botresponse.messageout.output.text);
-                                                                        $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
+                                        function processOK(response) {
+                                            console.log(response);
+                                            console.log(response.botresponse.messageout);
+                                            console.log(response.botresponse.messageout.output.text);
+                                            console.log(response.botresponse.messageout.context);
+                                            chat('Bot', response.botresponse.messageout.output.text);
+                                            $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
 
-                                                                        var objDiv = $('#id_botchathistory');
-                                                                        if (objDiv.length > 0) {
-                                                                            objDiv[0].scrollTop = objDiv[0].scrollHeight;
-                                                                        }
-                                                                    }
+                                            var objDiv = $('#id_botchathistory');
+                                            if (objDiv.length > 0) {
+                                                objDiv[0].scrollTop = objDiv[0].scrollHeight;
+                                            }
+                                        }
 
-                                                                    function processNotOK() {
-                                                                        chat('Error', 'Error whilst attempting to talk to Bot');
-                                                                    }
+                                        function processNotOK() {
+                                            chat('Error', 'Error whilst attempting to talk to Bot');
+                                        }
 
-                                                                    function invokeAjax(message) {
-                                                                        var contextdata = $('#id_contextdump').data('convContext');
-                                                                        console.log('checking stashed context data');
-                                                                        console.log(contextdata);
+                                        function invokeAjax(message) {
+                                            var contextdata = $('#id_contextdump').data('convContext');
+                                            console.log('checking stashed context data');
+                                            console.log(contextdata);
 
 
-                                                                        //var ajaxData = "msgdata=" + message;
-                                                                        var ajaxData = {};
-                                                                        ajaxData.msgdata = message;
-                                                                        if (contextdata) {
-                                                                            ajaxData.context = contextdata;
-                                                                        }
+                                            //var ajaxData = "msgdata=" + message;
+                                            var ajaxData = {};
+                                            ajaxData.msgdata = message;
+                                            if (contextdata) {
+                                                ajaxData.context = contextdata;
+                                            }
 
-                                                                        $.ajax({
-                                                                            type: 'POST',
-                                                                            url: 'botchat',
-                                                                            data: ajaxData,
-                                                                            success: processOK,
-                                                                            error: processNotOK
-                                                                        });
-                                                                    }
+                                            $.ajax({
+                                                type: 'POST',
+                                                url: 'botchat',
+                                                data: ajaxData,
+                                                success: processOK,
+                                                error: processNotOK
+                                            });
+                                        }
 
-                                                                    // User has entered some text.
-                                                                    function onChatClick(e) {
-                                                                        e.preventDefault();
-                                                                        var txt = $('#id_chattext').val();
-                                                                        chat('You', txt);
-                                                                        invokeAjax(txt);
-                                                                        $('#id_chattext').val('');
-                                                                    }
+                                        // User has entered some text.
+                                        function onChatClick(e) {
+                                            e.preventDefault();
+                                            var txt = $('#id_chattext').val();
+                                            chat('You', txt);
+                                            invokeAjax(txt);
+                                            $('#id_chattext').val('');
+                                        }
 
                     </script>
 
