@@ -273,14 +273,14 @@ div[role=main] section.demo {
     height: 100vh;
     overflow: scroll;
     padding: 100px 30px 90px;
-/*    background-image: url('http://www.whitestrailers.com/bot/img/house.png');*/
-   background-image: url('http://www.whitestrailers.com/bot/img/ducks.png');
+    background-image: url('http://www.whitestrailers.com/bot/img/house.png');
+/*   background-image: url('http://www.whitestrailers.com/bot/img/ducks.png');*/
     background-repeat: repeat;
 }
 
 .right-callout {
     height: 100vh;
-    background-image: url('../img/left-bar-kids.png');
+    background-image: url('../img/left-bar.png');
     background-position: 92% 100%;
     background-color: #0b0b0d;
     margin-top: 47px;

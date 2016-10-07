@@ -97,8 +97,10 @@
                                 </div>
                                 <div class="columns large-3 medium-3 small-10 right-callout">
                                     <img class="text-center animated slideInDown" src="http://www.whitestrailers.com/bot/img/bot-profile.png" alt="Bot Profile Image">
-                                    <p class="text-center"><span class="bot-name">Freddie Smart</span><br><span class="bot-job lobster">Property Bot</span></p>
+
+                                    <p class="text-center"><span class="bot-name">Smart Move</span><br><span class="bot-job lobster">Property Bot</span></p>
                                     <p class="text-center">The danger of the past was that men became slaves. The danger of the future is that <strong>men may become robots</strong>.</p>
+
                                     <a class="centered btn-callout">Mortgage Calculator</a>
                                 </div>
                             </div>
@@ -200,7 +202,22 @@
                                                     $(this).trigger("enterKey");
                                                 }
                                             });
+
+                                            botInUse = 'Bot';
+
+                                            $.get( "https://jornodered.mybluemix.net/tweets", function( data ) {
+                                            	console.log(data);
+                                            });
+
                                         });
+
+                                        function twitterOK(response) {
+                                            console.log(response);
+                                        }
+
+                                        function twitterNotOK() {
+                                            chat('Error', 'Error whilst attempting to talk to Bot');
+                                        }
 
                                         // if javascript is enabled on the browser then can
                                         // remove the warning message
@@ -209,13 +226,23 @@
                                         }
 
                                         function createNewDiv(who, message) {
+
+                                        	var text = ""
+				                        	if (message instanceof Array) {
+				                        		for (var i = 0; i < message.length; i++) {
+				                        			text += ' ' + message[i];
+				                        		};
+				                        	} else {
+				                        		text = message;
+				                        	}
+
                                             if (who === 'Bot') {
-                                                function botDelay() {
-                                                    return '<div class="bot-wrapper"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot animated pulse">' + message + '</div>';
-                                                }
-                                                return setTimeout(botDelay, 2000);
+                                                // function botDelay() {
+                                                    return '<div class="bot-wrapper"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot animated pulse">' + text + '</div>';
+                                                // }
+                                                // return setTimeout(botDelay, 2000);
                                             } else {
-                                                return '<div class="human-wrapper"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human animated pulse">' + message + '</div>';
+                                                return '<div class="human-wrapper"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human animated pulse">' + text + '</div>';
                                             }
                                         }
 
@@ -225,18 +252,21 @@
 
                                         function processOK(response) {
                                             console.log(response);
-                                            console.log(response.botresponse.messageout);
-                                            console.log(response.botresponse.messageout.output.text);
-                                            console.log(response.botresponse.messageout.context);
 
-                                            if (response.botresponse.messageout.output.text instanceof Array &&
-                                                    response.botresponse.messageout.output.text.length > 0 &&
-                                                    response.botresponse.messageout.output.text[0].indexOf('found the following properties') !== -1) {
+                                            var houses = false;
+                                            for (var i=0; i<response.length; i++) {
+                                            	if (response[i].indexOf('found the following properties') !== -1) {
+                                            		houses = true;
+                                            		response = response.splice(3,3);
+                                            	}
+                                            }
+
+                                            if (houses) {
                                                 $('#owl-example').show();
-                                                chat('Bot', response.botresponse.messageout.output.text[0]);
+                                                chat('Bot', response[0]);
                                             } else {
                                                 $('#owl-example').hide();
-                                                chat('Bot', response.botresponse.messageout.output.text);
+                                                chat('Bot', response);
                                             }
 
                                             $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
@@ -266,13 +296,23 @@
                                                 ajaxData.context = contextdata;
                                             }
 
-                                            $.ajax({
-                                                type: 'POST',
-                                                url: 'botchat',
-                                                data: ajaxData,
-                                                success: processOK,
-                                                error: processNotOK
-                                            });
+                                            if (botInUse === 'Bot') {
+	                                            $.ajax({
+	                                                type: 'POST',
+	                                                url: 'botchat',
+	                                                data: ajaxData,
+	                                                success: processOK,
+	                                                error: processNotOK
+	                                            });                                            	
+                                            } else {
+	                                            $.ajax({
+	                                                type: 'POST',
+	                                                url: 'botchat',
+	                                                data: ajaxData,
+	                                                success: processOK,
+	                                                error: processNotOK
+	                                            });	
+                                            }
                                         }
 
                                         // User has entered some text.
