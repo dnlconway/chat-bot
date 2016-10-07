@@ -57,6 +57,8 @@
                         <div class="container">
                             <div class="row">
                                 <div id="id_botchathistory" class="columns large-9 medium-9 small-10 chat-area">
+                                	<div class="bot-wrapper animated pulse"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot">Hello, I'm a bot and my name is Smart Move. I hope you're well today. Looking for a new home? Perhaps I can help. What area are you interested in?</div>
+
                                     <ul class="btn-options hide">
                                         <li>Option 1</li>
                                         <li>Option 2</li>
@@ -207,7 +209,6 @@
                                             });
 
                                             botInUse = 'Bot';
-
                                         });
 
                                         function twitterOK(response) {
@@ -275,7 +276,7 @@
                                             			txt = 'Based on social media, this area has below average sentiment rating';
                                             		} else {
                                             			if (data.rows[1].ave < 4) {
-                                            				txt = 'Based on social media, this area has good sentiment rating';
+                                            				txt = 'Based on social media, this area has good sentiment rating (sentiment score: ' + data.rows[1].ave + ')';
                                             			} else {
                                             				txt = 'Based on social media, this area has excellemt sentiment rating';
                                             			}
