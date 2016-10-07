@@ -272,7 +272,7 @@
                                             			txt = 'Based on social media, this area has below average sentiment rating';
                                             		} else {
                                             			if (data.rows[1].ave < 4) {
-                                            				txt = 'Based on social media, this area has good sentiment rating';
+                                            				txt = 'Based on social media, this area has good sentiment rating (sentiment score: ' + data.rows[1].ave + ')';
                                             			} else {
                                             				txt = 'Based on social media, this area has excellemt sentiment rating';
                                             			}
