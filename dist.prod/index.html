@@ -199,12 +199,17 @@
                                                 }
                                             });
 
-                                            $.ajax({
-                                                type: 'GET',
-                                                url: 'https://jornodered.mybluemix.net/tweets',
-                                                success: twitterOK,
-                                                error: twitterNotOK
+                                            $.get( "https://jornodered.mybluemix.net/tweets", function( data ) {
+                                            	console.log(data);
+                                            	// $( ".result" ).html( data );
                                             });
+
+                                            // $.ajax({
+                                            //     type: 'GET',
+                                            //     url: 'https://jornodered.mybluemix.net/tweets',
+                                            //     success: twitterOK,
+                                            //     error: twitterNotOK
+                                            // });
 
                                         });
 
@@ -225,9 +230,9 @@
                                         function createNewDiv(who, message) {
 
                                         	var text = ""
-				                        	if (response.botresponse.messageout.output.text instanceof Array) {
-				                        		for (var i = response.botresponse.messageout.output.text.length - 1; i >= 0; i--) {
-				                        			text += response.botresponse.messageout.output.text[i];
+				                        	if (message instanceof Array) {
+				                        		for (var i = message.length - 1; i >= 0; i--) {
+				                        			text += message[i];
 				                        		};
 				                        	} else {
 				                        		text = message;
