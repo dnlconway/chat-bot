@@ -238,11 +238,11 @@
 
                                             if (who === 'Bot') {
                                                 // function botDelay() {
-                                                    return '<div class="bot-wrapper"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot animated pulse">' + text + '</div>';
+                                                    return '<div class="bot-wrapper animated pulse"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot">' + text + '</div>';
                                                 // }
                                                 // return setTimeout(botDelay, 2000);
                                             } else {
-                                                return '<div class="human-wrapper"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human animated pulse">' + text + '</div>';
+                                                return '<div class="human-wrapper animated pulse"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human">' + text + '</div>';
                                             }
                                         }
 
@@ -273,11 +273,6 @@
                                             var objDiv = $('#id_botchathistory');
                                             if (objDiv.length > 0) {
                                                 objDiv[0].scrollTop = objDiv[0].scrollHeight;
-
-//                                                var scrollHeight = objDiv[0].scrollHeight;
-//                                                objDiv[0].animate({
-//                                                    scrollTop: "400px"
-//                                                }, 500);
                                             }
                                         }
 
