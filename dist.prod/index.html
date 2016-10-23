@@ -260,7 +260,8 @@
                                             var houses = false;
                                             for (var i=0; i<response.length; i++) {
                                                 console.log(response[i]);
-                                                console.log(response[i].indexOf('found the following properties') + ' res');
+                                                console.log(houses);
+                                                console.log(response[i].indexOf('found the following properties'));
                                             	if (response[i].indexOf('found the following properties') !== -1) {
                                             		houses = true;
                                                     if (houses) {
