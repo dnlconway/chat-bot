@@ -263,7 +263,10 @@
                                                 console.log(response[i].indexOf('found the following properties'));
                                             	if (response[i].indexOf('found the following properties') !== -1) {
                                             		houses = true;
-                                            		//response = response.splice(0,3).push(response.splice(6,2));
+                                                    if (houses) {
+                                                        break;
+                                                    }
+                                            		response = response.splice(0,3).push(response.splice(6,2));
                                             	}
                                             }
 
