@@ -264,12 +264,12 @@
                                             	if (response[i].indexOf('found the following properties') !== -1) {
                                             		houses = true;
                                                     if (houses) {
+                                                        response = response.splice(0,3).push(response.splice(6,2));
                                                         break;
                                                     }
-                                            		response = response.splice(0,3).push(response.splice(6,2));
                                             	}
                                             }
-
+                                            console.log(response);
                                             if (houses) {
                                                 $('#owl-example').show();
                                                 chat('Bot', response);
