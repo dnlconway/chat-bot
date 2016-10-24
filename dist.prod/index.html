@@ -302,6 +302,7 @@
 
                                             if (response[0].indexOf('wake up Chatty') !== -1) {
                                             	botInUse = 'Chatty';
+                                                $("#id_chattext").attr("placeholder", "Ask Chatty a question...").val("").focus().blur();
                                             	chat('Bot', "Hi, I'm Chatty the chatbot");	
                                             }
                                             
