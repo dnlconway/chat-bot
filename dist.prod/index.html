@@ -69,36 +69,7 @@
                                         <li>Option 3</li>
                                     </ul>
 
-                                    <div id="owl-example" class="owl-carousel hide">
-                                        <div class="card animated bounceIn">
-                                            <img src="http://www.whitestrailers.com/bot/img/house-1.png">
-                                            <ul class="card-content">
-                                                <li class="house-type"><strong>Detached House | 2 Beds | 2 Baths</strong></li>
-                                                <li class="house-desc">16 Forest View, Raheny, Dublin 5</li>
-                                                <li class="house-price"><small>€295,000</small></li>
-                                            </ul>
-                                            <a href="#"><div class="house-btn">VIEW</div></a>
-                                        </div>
-                                        <div class="card animated bounceIn">
-                                            <img src="http://www.whitestrailers.com/bot/img/house-2.png">
-                                            <ul class="card-content">
-                                                <li class="house-type"><strong>Detached House | 3 Beds | 3 Baths</strong></li>
-                                                <li class="house-desc">24 Cherry LaneRaheny, Dublin 5</li>
-                                                <li class="house-price"><small>€280,000</small></li>
-                                            </ul>
-                                            <a href="#"><div class="house-btn">VIEW</div></a>
-                                        </div>
-                                        <div class="card animated bounceIn">
-                                            <img src="http://www.whitestrailers.com/bot/img/house-3.png">
-                                            <ul class="card-content">
-                                                <li class="house-type"><strong>Detached House | 3 Beds | 3 Baths</strong></li>
-                                                <li class="house-desc">11 Wood Avenue, Raheny, Dublin 5</li>
-                                                <li class="house-price"><small>€280,000</small></li>
-                                            </ul>
-                                            <a href="#"><div class="house-btn">VIEW</div></a>
-                                        </div>
-
-                                    </div>
+                                    
 
 
 
@@ -229,29 +200,62 @@
                                             $('#no-script').remove();
                                         }
 
-                                        function createNewDiv(who, message) {
+                                        function createNewDiv(who, message, houses) {
 
-                                        	var text = ""
-				                        	if (message instanceof Array) {
-				                        		for (var i = 0; i < message.length; i++) {
-				                        			text += ' ' + message[i];
-				                        		};
-				                        	} else {
-				                        		text = message;
-				                        	}
+                                            if (houses) {
+                                                return '<div id="owl-example" class="owl-carousel">
+                                                            <div class="card animated bounceIn">
+                                                                <img src="http://www.whitestrailers.com/bot/img/house-1.png">
+                                                                <ul class="card-content">
+                                                                    <li class="house-type"><strong>Detached House | 2 Beds | 2 Baths</strong></li>
+                                                                    <li class="house-desc">16 Forest View, Raheny, Dublin 5</li>
+                                                                    <li class="house-price"><small>€295,000</small></li>
+                                                                </ul>
+                                                                <a href="#"><div class="house-btn">VIEW</div></a>
+                                                            </div>
+                                                            <div class="card animated bounceIn">
+                                                                <img src="http://www.whitestrailers.com/bot/img/house-2.png">
+                                                                <ul class="card-content">
+                                                                    <li class="house-type"><strong>Detached House | 3 Beds | 3 Baths</strong></li>
+                                                                    <li class="house-desc">24 Cherry LaneRaheny, Dublin 5</li>
+                                                                    <li class="house-price"><small>€280,000</small></li>
+                                                                </ul>
+                                                                <a href="#"><div class="house-btn">VIEW</div></a>
+                                                            </div>
+                                                            <div class="card animated bounceIn">
+                                                                <img src="http://www.whitestrailers.com/bot/img/house-3.png">
+                                                                <ul class="card-content">
+                                                                    <li class="house-type"><strong>Detached House | 3 Beds | 3 Baths</strong></li>
+                                                                    <li class="house-desc">11 Wood Avenue, Raheny, Dublin 5</li>
+                                                                    <li class="house-price"><small>€280,000</small></li>
+                                                                </ul>
+                                                                <a href="#"><div class="house-btn">VIEW</div></a>
+                                                            </div>
 
-                                            if (who === 'Bot') {
-                                                // function botDelay() {
-                                                    return '<div class="bot-wrapper animated pulse"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot">' + text + '</div>';
-                                                // }
-                                                // return setTimeout(botDelay, 2000);
+                                                        </div>';
                                             } else {
-                                                return '<div class="human-wrapper animated pulse"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human">' + text + '</div>';
+                                                var text = ""
+                                                if (message instanceof Array) {
+                                                    for (var i = 0; i < message.length; i++) {
+                                                        text += ' ' + message[i];
+                                                    };
+                                                } else {
+                                                    text = message;
+                                                }
+
+                                                if (who === 'Bot') {
+                                                    // function botDelay() {
+                                                        return '<div class="bot-wrapper animated pulse"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot">' + text + '</div>';
+                                                    // }
+                                                    // return setTimeout(botDelay, 2000);
+                                                } else {
+                                                    return '<div class="human-wrapper animated pulse"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human">' + text + '</div>';
+                                                }                                                
                                             }
                                         }
 
                                         function chat(person, txt) {
-                                            $('#id_botchathistory').append(createNewDiv(person, txt));
+                                            $('#id_botchathistory').append(createNewDiv(person, txt, houses));
                                         }
 
                                         function processOK(response) {
@@ -265,7 +269,7 @@
                                             		houses = true;
                                                     if (houses) {
                                                         console.log(response.splice(6,7));
-                                                        response = response.splice(0,3).concat(response.splice(6,7));
+                                                        // response = response.splice(0,3).concat(response.splice(6,7));
                                                         break;
                                                     }
                                             	}
@@ -275,7 +279,9 @@
                                             if (houses) {
                                                 $('#owl-example').show();
                                                 $('#owl-example').attr('style','display: block !important');
-                                                chat('Bot', response);
+                                                chat('Bot', response.splice(0,3));
+                                                chat('Bot', undefined, houses);
+                                                chat('Bot', response.splice(7,7));
                                             } else {
                                                 $('#owl-example').hide();
                                                 chat('Bot', response);
