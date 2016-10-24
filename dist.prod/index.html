@@ -69,7 +69,7 @@
                                         <li>Option 3</li>
                                     </ul>
 
-                                    <div id="owl-example" class="owl-carousel">
+                                    <div id="owl-example" class="owl-carousel hide">
                                         <div class="card animated bounceIn">
                                             <img src="http://www.whitestrailers.com/bot/img/house-1.png">
                                             <ul class="card-content">
@@ -274,6 +274,7 @@
                                             console.log('houses:' + houses);
                                             if (houses) {
                                                 $('#owl-example').show();
+                                                $('#owl-example').attr('style','display: block !important');
                                                 chat('Bot', response);
                                             } else {
                                                 $('#owl-example').hide();
