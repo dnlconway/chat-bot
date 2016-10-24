@@ -196,7 +196,7 @@
                                             // console.log(response);
 
                                             var houses = false;
-                                            var msg = undefined;
+                                            var msg = '';
                                             for (var i=0; i<response.length; i++) {
                                                 console.log(response[i]);
                                                 console.log(response[i].indexOf('found the following properties'));
@@ -209,16 +209,13 @@
                                                     }
                                             	}
                                             }
-                                            console.log('response: ' + response);
-                                            console.log('houses:' + houses);
                                             if (houses) {
-                                                // $('#owl-example').show();
                                                 chat('Bot', response.splice(0,3));
                                                 chat('Bot', undefined, houses);
                                                 $('#owl-example').attr('style','display: block !important');
 
                                                 $("#owl-example").owlCarousel({
-                                                // Most important owl features
+                                                    // Most important owl features
                                                     items: 4,
                                                     itemsCustom: false,
                                                     itemsDesktop: [1000, 1],
@@ -282,7 +279,7 @@
 
                                                 chat('Bot', msg);
                                             } else {
-                                                $('#owl-example').hide();
+                                                // $('#owl-example').hide();
                                                 chat('Bot', response);
                                             }
 
