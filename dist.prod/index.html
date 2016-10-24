@@ -203,7 +203,7 @@
                                         function createNewDiv(who, message, houses) {
 
                                             if (houses) {
-                                                return '<div class="bot-wrapper animated pulse"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div id="owl-example" class="owl-carousel">' +
+                                                return '<div id="owl-example" class="owl-carousel">' +
                                                 '<div class="card animated bounceIn">' +
                                                     '<img src="http://www.whitestrailers.com/bot/img/house-1.png">' +
                                                     '<ul class="card-content">' +
@@ -260,13 +260,14 @@
                                             // console.log(response);
 
                                             var houses = false;
+                                            var msg = undefined;
                                             for (var i=0; i<response.length; i++) {
                                                 console.log(response[i]);
                                                 console.log(response[i].indexOf('found the following properties'));
                                             	if (response[i].indexOf('found the following properties') !== -1) {
                                             		houses = true;
                                                     if (houses) {
-                                                        console.log(response.splice(6,7));
+                                                        msg = response[7];
                                                         // response = response.splice(0,3).concat(response.splice(6,7));
                                                         break;
                                                     }
@@ -275,11 +276,11 @@
                                             console.log('response: ' + response);
                                             console.log('houses:' + houses);
                                             if (houses) {
-                                                $('#owl-example').show();
-                                                $('#owl-example').attr('style','display: block !important');
+                                                // $('#owl-example').show();
                                                 chat('Bot', response.splice(0,3));
                                                 chat('Bot', undefined, houses);
-                                                chat('Bot', response.splice(7,7));
+                                                $('#owl-example').attr('style','display: block !important');
+                                                chat('Bot', msg);
                                             } else {
                                                 $('#owl-example').hide();
                                                 chat('Bot', response);
