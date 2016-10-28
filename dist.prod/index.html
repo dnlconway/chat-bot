@@ -71,11 +71,11 @@
             </button>
         </div>
         <!-- / Modal ~ Menu -->
-        
+
         <!-- Modal ~ Team -->
         <div class="reveal" data-animation-in="slide-in-down" data-animation-out="slide-out-up" id="team" data-reveal>
             <div class="team-pic">
-            <img src="img/team.jpg" alt="The AIB Watson Team Burning the midnight oil">
+                <img src="img/team.jpg" alt="The AIB Watson Team Burning the midnight oil">
             </div>
             <h1><span>Meet The Team</span></h1>
             <div class="members">
@@ -203,6 +203,7 @@
                     </div>
 
 
+
                     <!-- Text Input Area -->
                     <div class="row">
                         <div class="columns border large-9 medium-12 small-12 small-centered row-fixed">
@@ -235,547 +236,497 @@
         </div><!-- /.container -->
 
 
-        <script src="http://www.whitestrailers.com/bot/js/vendor/what-input.js"></script>
-        <script src="http://www.whitestrailers.com/bot/js/vendor/owl.carousel.min.js"></script>
+                        <script src="http://www.whitestrailers.com/bot/js/vendor/what-input.js"></script>
+                        <script src="http://www.whitestrailers.com/bot/js/vendor/owl.carousel.min.js"></script>
 
-        <script src="http://www.whitestrailers.com/bot/js/vendor/foundation.min.js"></script>
-        <script src="js/vendor/emojione.js"></script>
-        <script src="js/vendor/emojionearea.js"></script>
-        <script>
-            $(document).ready(function () {
-                
-                    
-                $("#id_chattext").emojioneArea({
-                    events: {
-                        keyup: function (editor, event) {
+                        <script src="http://www.whitestrailers.com/bot/js/vendor/foundation.min.js"></script>
+                        <script src="js/vendor/emojione.js"></script>
+                        <script src="js/vendor/emojionearea.js"></script>
+                        <script>
+                                    $(document).ready(function () {
+
+                            $("#id_chattext").emojioneArea({
+                            events: {
+                            keyup: function (editor, event) {
                             // catches everything but enter
-                            
+
                             if (event.which === 13) {
-                                onChatClick(event);
-                                $('.emojionearea-editor').empty();
+                            onChatClick(event);
+                                    $('.emojionearea-editor').empty();
                             }
-                        }
-                    }
-                });
-                $("#id_chattext").data("emojioneArea").editor.focus();
-            });
-        </script>
-        <script> $(document).foundation();</script>
+                            }
+                            }
+                            });
+                                    $("#id_chattext").data("emojioneArea").editor.focus();
+                            });</script>
+                        <script> $(document).foundation();</script>
 
 
 
-        <script type="text/javascript">
+                        <script type="text/javascript">
 
-            Pace.on("start", function () {
-                $(".loading-bg").show();
-            });
+                                    Pace.on("start", function () {
+                                    $(".loading-bg").show();
+                                    });
+                                    Pace.on("done", function () {
+                                    $(".loading-bg").hide();
+                                            $('.blur').removeClass('on');
+                                            $(".fadeIn, .rubberBand").addClass("animated");
+                                            $('.sm-logo').fadeIn().css('display', 'block').addClass('slideInDown');
+                                            $('.logo').delay(500).fadeIn();
+                                    });
+                                    // When search modal is open foucs on input
+                                    $('#search').on('open.zf.reveal', function () {
+                            $('.input-search').focus();
+                                    $('.search-btn').removeClass('fa-search').addClass('x');
+                            });
+                                    $('#search').on('closed.zf.reveal', function () {
 
-            Pace.on("done", function () {
-                $(".loading-bg").hide();
-                $('.blur').removeClass('on');
-                $(".fadeIn, .rubberBand").addClass("animated");
-                $('.sm-logo').fadeIn().css('display', 'block').addClass('slideInDown');
-                $('.logo').delay(500).fadeIn();
-
-            });
-
-
-
-            //$(document).foundation();
-            $(document).ready(function () {
-
-
-
-                // When search modal is open foucs on input
-                $('#search').on('open.zf.reveal', function () {
-                    $('.input-search').focus();
-                    $('.search-btn').removeClass('fa-search').addClass('x');
-                });
-                
-                $('#search').on('closed.zf.reveal', function () {
-                
-                    $('.search-btn').addClass('fa-search').removeClass('x');
-                });
-                
-                
-
-                
+                            $('.search-btn').addClass('fa-search').removeClass('x');
+                            });
+                                    var toggles = document.querySelectorAll(".c-hamburger");
+                                    for (var i = toggles.length - 1; i >= 0; i--) {
+                            var toggle = toggles[i];
+                                    toggleHandler(toggle);
+                            }
+                            ;
+                                    function toggleHandler(toggle) {
+                                    toggle.addEventListener("click", function (e) {
+                                    e.preventDefault();
+                                            (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+                                    });
+                                    }
 
 
+                            javascriptCheck();
+                                    $('#id_contextdump').hide();
+                                    $('#id_chattext').bind("enterKey", function (e) {
+                            onChatClick(event);
+                            });
+                                    $('#id_chattext').keyup(function (e) {
+                            if (e.keyCode === 13) {
+                            $(this).trigger("enterKey");
+                            }
+                            });
+                                    botInUse = 'Bot';
+                            
+                                    $('.menu-btn').on('click', function(){
 
-
-//
-//                $("#id_chattext").emojioneArea({
-//                    
-//                    events: {
-//                        keyup: function (editor, event) {
-//                            // catches everything but enter
-//                            
-//                            if (event.which === 13) {
-//                                onChatClick(event);
-//                                $('.emojionearea-editor').empty();
-//                            }
-//                        }
-//                    },
-//                    focus: function (editor, event) {
-//                        alert('Hey');
-//                    }
-//                });
-////                
-
-
-
-
-
-
-
-
-                var toggles = document.querySelectorAll(".c-hamburger");
-
-                for (var i = toggles.length - 1; i >= 0; i--) {
-                    var toggle = toggles[i];
-                    toggleHandler(toggle);
-                }
-                ;
-
-                function toggleHandler(toggle) {
-                    toggle.addEventListener("click", function (e) {
-                        e.preventDefault();
-                        (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
-                    });
-                }
-
-
-                javascriptCheck();
-                $('#id_contextdump').hide();
-                $('#id_chattext').bind("enterKey", function (e) {
-                    onChatClick(event);
-                });
-                $('#id_chattext').keyup(function (e) {
-                    if (e.keyCode === 13) {
-                        $(this).trigger("enterKey");
-                    }
-                });
-                botInUse = 'Bot';
-            });
-            
-            $('.menu-btn').on('click', function(){
-                
-                if($(this).hasClass('off')){
-                    $(this).removeClass('off').addClass('on');
-                    $('.target').text('Menu');
-                } else {
-                    $(this).removeClass('on').addClass('off');
-                    $('.target').text('Chat');
-                }
-                
-                
-            });
-            
-            
-
-
-
-
-
-            function twitterOK(response) {
-                console.log(response);
-            }
-
-            function twitterNotOK() {
-                chat('Error', 'Error whilst attempting to talk to Bot');
-            }
-            var d = new Date();
-            var time = d.getHours() + ":" + d.getMinutes();
-
-            // if javascript is enabled on the browser then can
-            // remove the warning message
-            function javascriptCheck() {
-                $('#no-script').remove();
-            }
-
-            function createNewDiv(who, message, houses) {
-
-                if (houses) {
-                    return '<div id="owl-example" class="owl-carousel">' +
-                            '<div class="card animated bounceIn">' +
-                            '<img src="http://www.whitestrailers.com/bot/img/house-1.png">' +
-                            '<ul class="card-content">' +
-                            '<li class="house-type"><strong>Detached House | 2 Beds | 2 Baths</strong></li>' +
-                            '<li class="house-desc">16 Forest View, Raheny, Dublin 5</li>' +
-                            '<li class="house-price"><small>€295,000</small></li>' +
-                            '</ul>' +
-                            '<a href="#"><div class="house-btn">VIEW</div></a>' +
-                            '</div>' +
-                            '<div class="card animated bounceIn">' +
-                            '<img src="http://www.whitestrailers.com/bot/img/house-2.png">' +
-                            '<ul class="card-content">' +
-                            '<li class="house-type"><strong>Detached House | 3 Beds | 3 Baths</strong></li>' +
-                            '<li class="house-desc">24 Cherry LaneRaheny, Dublin 5</li>' +
-                            '<li class="house-price"><small>€280,000</small></li>' +
-                            '</ul>' +
-                            '<a href="#"><div class="house-btn">VIEW</div></a>' +
-                            '</div>' +
-                            '<div class="card animated bounceIn">' +
-                            '<img src="http://www.whitestrailers.com/bot/img/house-3.png">' +
-                            '<ul class="card-content">' +
-                            '<li class="house-type"><strong>Detached House | 3 Beds | 3 Baths</strong></li>' +
-                            '<li class="house-desc">11 Wood Avenue, Raheny, Dublin 5</li>' +
-                            '<li class="house-price"><small>€280,000</small></li>' +
-                            '</ul><a href="#"><div class="house-btn">VIEW</div></a>' +
-                            '</div>' +
-                            '</div>';
-                } else {
-                    var text = "";
-                    if (message instanceof Array) {
-                        for (var i = 0; i < message.length; i++) {
-                            text += ' ' + message[i];
-                        }
-                        ;
-                    } else {
-                        text = message;
-                    }
-
-                    if (who === 'Bot') {
-                        // function botDelay() {
-                        return '<div class="bot-wrapper animated pulse"><img class="bot-pic" src="img/bot-pic.png"><div class="bot">' + text + '</div>';
-                        // }
-                        // return setTimeout(botDelay, 2000);
-                    } else {
-                        return '<div class="human-wrapper animated pulse"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human">' + text + '<div class="time">' + time + '   <i class="fa fa-check" aria-hidden="true"></i></div></div>';
-                    }
-                }
-            }
-
-            function chat(person, txt, houses) {
-                $('#id_botchathistory').append(createNewDiv(person, txt, houses));
-            }
-
-            function processOK(response) {
-                // console.log(response);
-
-                var houses = false;
-                var msg = '';
-                for (var i = 0; i < response.length; i++) {
-                    console.log(response[i]);
-                    console.log(response[i].indexOf('found the following properties'));
-                    if (response[i].indexOf('found the following properties') !== -1) {
-                        houses = true;
-                        if (houses) {
-                            msg = response[7];
-                            // response = response.splice(0,3).concat(response.splice(6,7));
-                            break;
-                        }
-                    }
-                }
-                if (houses) {
-                    chat('Bot', response.splice(0, 3));
-                    chat('Bot', undefined, houses);
-                    $('#owl-example').attr('style', 'display: block !important');
-
-                    $("#owl-example").owlCarousel({
-                        // Most important owl features
-                        items: 4,
-                        itemsCustom: false,
-                        itemsDesktop: [1000, 1],
-                        itemsDesktopSmall: [980, 3],
-                        itemsTablet: [768, 2],
-                        itemsTabletSmall: false,
-                        itemsMobile: [479, 1],
-                        singleItem: false,
-                        itemsScaleUp: false,
-                        //Basic Speeds
-                        slideSpeed: 200,
-                        paginationSpeed: 800,
-                        rewindSpeed: 1000,
-                        //Autoplay
-                        autoPlay: false,
-                        stopOnHover: false,
-                        // Navigation
-                        navigation: false,
-                        navigationText: ["prev", "next"],
-                        rewindNav: true,
-                        scrollPerPage: false,
-                        //Pagination
-                        pagination: true,
-                        paginationNumbers: false,
-                        // Responsive 
-                        responsive: true,
-                        responsiveRefreshRate: 200,
-                        responsiveBaseWidth: window,
-                        // CSS Styles
-                        baseClass: "owl-carousel",
-                        theme: "owl-theme",
-                        //Lazy load
-                        lazyLoad: false,
-                        lazyFollow: true,
-                        lazyEffect: "fade",
-                        //Auto height
-                        autoHeight: false,
-                        //JSON 
-                        jsonPath: false,
-                        jsonSuccess: false,
-                        //Mouse Events
-                        dragBeforeAnimFinish: true,
-                        mouseDrag: true,
-                        touchDrag: true,
-                        //Transitions
-                        transitionStyle: false,
-                        // Other
-                        addClassActive: false,
-                        //Callbacks
-                        beforeUpdate: false,
-                        afterUpdate: false,
-                        beforeInit: false,
-                        afterInit: false,
-                        beforeMove: false,
-                        afterMove: false,
-                        afterAction: false,
-                        startDragging: false,
-                        afterLazyLoad: false
-
-                    });
-
-                    chat('Bot', msg);
-                } else {
-                    // $('#owl-example').hide();
-                    chat('Bot', response);
-                }
-
-                if (response[0].indexOf('I can look on social media') !== -1) {
-                    $.get("https://jornodered.mybluemix.net/tweets", function (data) {
-                        var txt = "";
-                        if (data.rows[1].ave < 0) {
-                            txt = 'Based on social media, this area has below average sentiment rating';
-                        } else {
-                            if (data.rows[1].ave < 4) {
-                                txt = 'Based on social media, this area has good sentiment rating (sentiment score: ' + data.rows[1].ave + ')';
+                            if ($(this).hasClass('off')){
+                            $(this).removeClass('off').addClass('on');
+                                    $('.target').text('Menu');
                             } else {
-                                txt = 'Based on social media, this area has excellemt sentiment rating';
+                            $(this).removeClass('on').addClass('off');
+                                    $('.target').text('Chat');
                             }
-                        }
-                        chat('Bot', txt);
-                    });
+                            });
+                                    function twitterOK(response) {
+                                    console.log(response);
+                                    }
 
-                }
-
-                if (response[0].indexOf('wake up Chatty') !== -1) {
-                    botInUse = 'Chatty';
-                    //$("#id_chattext").attr("placeholder", "Ask Chatty a question...").val("").focus();
-                    chat('Bot', "Hi, I'm Chatty the chatbot");
-                }
-
-                if (botInUse === 'Chatty') {
-                    $('.chat-area').addClass('ducks');
-                    $('.right-callout').addClass('lego');
-                    $('.bot-name').html('Chatty :)');
-                }
-
-                // $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
-
-                var objDiv = $('#id_botchathistory');
-                if (objDiv.length > 0) {
-                    objDiv[0].scrollTop = objDiv[0].scrollHeight;
-                }
-            }
-
-            function processNotOK() {
-                chat('Error', 'Error whilst attempting to talk to Bot');
-            }
-
-            function invokeAjax(message) {
-                var contextdata = $('#id_contextdump').data('convContext');
-                console.log('checking stashed context data');
-                console.log(contextdata);
-                //var ajaxData = "msgdata=" + message;
-                var ajaxData = {};
-                ajaxData.msgdata = message;
-                if (contextdata) {
-                    ajaxData.context = contextdata;
-                }
-
-                if (botInUse === 'Bot') {
-                    $.ajax({
-                        type: 'POST',
-                        url: 'botchat',
-                        data: ajaxData,
-                        success: processOK,
-                        error: processNotOK
-                    });
-                } else {
-                    $.ajax({
-                        type: 'POST',
-                        url: 'kidchat',
-                        data: ajaxData,
-                        success: processOK,
-                        error: processNotOK
-                    });
-                }
-            }
-
-            // User has entered some text.
-            function onChatClick(e) {
-                e.preventDefault();
-                var txt = $('.emojionearea-editor').html();
-                chat('You', txt);
-                invokeAjax(txt);
-                //$('.chat-input').text('');
-
-                setTimeout(function () {
-                    $('.fa-check').addClass('fa-seen');
-                }, 2000);
-
-
-
-
-
-            }
-
-        </script>
-        <script>
-            /*global webkitSpeechRecognition */
-
-            (function () {
-                'use strict';
-
-                // check for support (webkit only)
-                if (!('webkitSpeechRecognition' in window))
-                    return;
-
-                var talkMsg = 'start talking';
-
-                // seconds to wait for more input after last
-                var patience = 6;
-
-                function capitalize(str) {
-                    return str.length ? str[0].toUpperCase() + str.slice(1) : str;
-                }
-
-                var inputEls = document.getElementsByClassName('speech-input');
-
-                [].forEach.call(inputEls, function (inputEl) {
-                    // create wrapper
-                    var wrapper = document.createElement('div');
-                    wrapper.classList.add('si-wrapper');
-
-                    // create mic button
-                    var micBtn = document.createElement('button');
-                    micBtn.classList.add('mic-btn');
-                    micBtn.classList.add('off');
-                    micBtn.classList.add('fa');
-                    //micBtn.classList.add('show-for-large-only');
-                    micBtn.classList.add('fa-microphone');
-                    micBtn.textContent = '';
-                    var micIcon = document.createElement('span');
-                    var holderIcon = document.createElement('span');
-                    micIcon.classList.add('si-mic');
-                    holderIcon.classList.add('si-holder');
-                    micBtn.appendChild(micIcon);
-                    micBtn.appendChild(holderIcon);
-
-                    // gather inputEl data
-                    var nextNode = inputEl.nextSibling;
-                    var parent = inputEl.parentNode;
-                    var inputHeight = inputEl.offsetHeight;
-                    var inputRightBorder = parseInt(getComputedStyle(inputEl).borderRightWidth, 10);
-                    var buttonSize = 0.8 * inputHeight;
-                    // Size bounds (useful for textareas).
-                    if (buttonSize > 26)
-                        buttonSize = 26;
-
-                    // append mic and input to wrapper
-                    wrapper.appendChild(parent.removeChild(inputEl));
-                    wrapper.appendChild(micBtn);
-
-                    // size and position mic and input
-                    micBtn.style.top = 0.1 * inputHeight + 'px';
-                    micBtn.style.height = micBtn.style.width = buttonSize + 'px';
-                    inputEl.style.paddingRight = buttonSize - inputRightBorder + 'px';
-
-                    // append wrapper where input was
-                    parent.insertBefore(wrapper, nextNode);
-
-                    // setup recognition
-                    var finalTranscript = '';
-                    var recognizing = false;
-                    var timeout;
-                    var oldPlaceholder = null;
-                    var recognition = new webkitSpeechRecognition();
-                    recognition.continuous = true;
-
-                    function restartTimer() {
-                        timeout = setTimeout(function () {
-                            recognition.stop();
-                        }, patience * 1000);
-                    }
-
-                    recognition.onstart = function () {
-                        oldPlaceholder = inputEl.placeholder;
-                        inputEl.placeholder = talkMsg;
-                        recognizing = true;
-                        micBtn.classList.add('listening');
-                        restartTimer();
-                    };
-
-                    recognition.onend = function () {
-                        recognizing = false;
-                        clearTimeout(timeout);
-                        micBtn.classList.remove('listening');
-                        if (oldPlaceholder !== null)
-                            inputEl.placeholder = oldPlaceholder;
-                    };
-
-                    recognition.onresult = function (event) {
-                        clearTimeout(timeout);
-                        for (var i = event.resultIndex; i < event.results.length; ++i) {
-                            if (event.results[i].isFinal) {
-                                finalTranscript += event.results[i][0].transcript;
+                            function twitterNotOK() {
+                            chat('Error', 'Error whilst attempting to talk to Bot');
                             }
-                        }
-                        finalTranscript = capitalize(finalTranscript);
-                        inputEl.value = finalTranscript;
-                        restartTimer();
-                    };
-
-                    micBtn.addEventListener('click', function (event) {
-                        event.preventDefault();
-                        
-                        var counter = 0;
-                    var countInt = setInterval(function () {
-                        ++counter;
-                        $('.counter').text(counter);
-                    }, 1000);
-
-                    if ($(this).hasClass('off')) {
-                        $(this).addClass('color-me-red animated pulse');
-                        $('.mic-in-use').removeClass('hide').fadeIn();
-                        countInt;
-                        micBtn.classList.add('on');
-                        micBtn.classList.remove('off');
-                    } else if($(this).hasClass('on')){
-                        //window.clearInterval(countInt);
-                        $(this).removeClass('color-me-red animated pulse');
-                        $('.mic-in-use').addClass('hide').fadeOut();
-                        $('this').removeClass('on').addClass('off');
-                        
-                    } 
-                        
-                        
-                        
-                        if (recognizing) {
-                            recognition.stop();
-                            return;
-                        }
-                        inputEl.value = finalTranscript = '';
-                        recognition.start();
-                    }, false);
-                });
-            })();
+                            var d = new Date();
+                                    var time = d.getHours() + ":" + d.getMinutes();
+                                    $(document).ready(function () {
 
 
+                            javascriptCheck();
+                                    $('#id_contextdump').hide();
+                                    $('#id_chattext').bind("enterKey", function (e) {
+                            onChatClick(event);
+                            });
+                                    $('#id_chattext').keyup(function (e) {
+                            if (e.keyCode == 13) {
+                            $(this).trigger("enterKey");
+                            }
+                            });
+                                    botInUse = 'Bot';
+                            });
+                                    function twitterOK(response) {
+                                    console.log(response);
+                                    }
+
+                            function twitterNotOK() {
+                            chat('Error', 'Error whilst attempting to talk to Bot');
+                            }
+
+                            // if javascript is enabled on the browser then can
+                            // remove the warning message
+                            function javascriptCheck() {
+                            $('#no-script').remove();
+                            }
+
+                            function createNewDiv(who, message, houses) {
+
+                            if (houses) {
+                            return '<div id="owl-example" class="owl-carousel">' +
+                                    '<div class="card animated bounceIn">' +
+                                    '<img src="http://www.whitestrailers.com/bot/img/house-1.png">' +
+                                    '<ul class="card-content">' +
+                                    '<li class="house-type"><strong>Detached House | 5 Beds | 4 Baths</strong></li>' +
+                                    '<li class="house-desc">16 Forest View, Raheny, Dublin 5</li>' +
+                                    '<li class="house-price"><small>€295,000</small></li>' +
+                                    '</ul>' +
+                                    '<a href="#"><div class="house-btn">VIEW</div></a>' +
+                                    '</div>' +
+                                    '<div class="card animated bounceIn">' +
+                                    '<img src="http://www.whitestrailers.com/bot/img/house-2.png">' +
+                                    '<ul class="card-content">' +
+                                    '<li class="house-type"><strong>Detached House | 4 Beds | 3 Baths</strong></li>' +
+                                    '<li class="house-desc">24 Cherry LaneRaheny, Dublin 5</li>' +
+                                    '<li class="house-price"><small>€280,000</small></li>' +
+                                    '</ul>' +
+                                    '<a href="#"><div class="house-btn">VIEW</div></a>' +
+                                    '</div>' +
+                                    '<div class="card animated bounceIn">' +
+                                    '<img src="http://www.whitestrailers.com/bot/img/house-3.png">' +
+                                    '<ul class="card-content">' +
+                                    '<li class="house-type"><strong>Detached House | 5 Beds | 3 Baths</strong></li>' +
+                                    '<li class="house-desc">11 Wood Avenue, Raheny, Dublin 5</li>' +
+                                    '<li class="house-price"><small>€280,000</small></li>' +
+                                    '</ul><a href="#"><div class="house-btn">VIEW</div></a>' +
+                                    '</div>' +
+                                    '<div class="card animated bounceIn">' +
+                                    '<img src="http://www.whitestrailers.com/bot/img/house-6.png">' +
+                                    '<ul class="card-content">' +
+                                    '<li class="house-type"><strong>Detached House | 5 Beds | 4 Baths</strong></li>' +
+                                    '<li class="house-desc">13 Acorn Place, Raheny, Dublin 5</li>' +
+                                    '<li class="house-price"><small>€320,000</small></li>' +
+                                    '</ul><a href="#"><div class="house-btn">VIEW</div></a>' +
+                                    '</div>' +
+                                    '<div class="card animated bounceIn">' +
+                                    '<img src="http://www.whitestrailers.com/bot/img/house-7.png">' +
+                                    '<ul class="card-content">' +
+                                    '<li class="house-type"><strong>Semi Detached House | 3 Beds | 3 Baths</strong></li>' +
+                                    '<li class="house-desc">2 Academy Elms, Raheny, Dublin 5</li>' +
+                                    '<li class="house-price"><small>€290,000</small></li>' +
+                                    '</ul><a href="#"><div class="house-btn">VIEW</div></a>' +
+                                    '</div>' +
+                                    '<div class="card animated bounceIn">' +
+                                    '<img src="http://www.whitestrailers.com/bot/img/house-8.png">' +
+                                    '<ul class="card-content">' +
+                                    '<li class="house-type"><strong>Terraced House | 4 Beds | 3 Baths</strong></li>' +
+                                    '<li class="house-desc">41 Little Green, Raheny, Dublin 5</li>' +
+                                    '<li class="house-price"><small>€300,000</small></li>' +
+                                    '</ul><a href="#"><div class="house-btn">VIEW</div></a>' +
+                                    '</div>' +
+                                    '</div>';
+                            } else {
+                            var text = ""
+                                    if (message instanceof Array) {
+                            for (var i = 0; i < message.length; i++) {
+                            text += ' ' + message[i];
+                            };
+                            } else {
+                            text = message;
+                            }
+
+                            if (who === 'Bot') {
+                            // function botDelay() {
+                            return '<div class="bot-wrapper animated pulse"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot">' + text + '</div>';
+                                    // }
+                                    // return setTimeout(botDelay, 2000);
+                            } else {
+                            return '<div class="human-wrapper animated pulse"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human">' + text + '</div>';
+                            }
+                            }
+                            }
+
+                            function chat(person, txt, houses) {
+                            $('#id_botchathistory').append(createNewDiv(person, txt, houses));
+                            }
+
+                            function processOK(response) {
+                            // console.log(response);
+
+                            var houses = false;
+                                    var msg = '';
+                                    for (var i = 0; i < response.length; i++) {
+                            console.log(response[i]);
+                                    console.log(response[i].indexOf('found the following properties'));
+                                    if (response[i].indexOf('found the following properties') !== - 1) {
+                            houses = true;
+                                    if (houses) {
+                            msg = response[7];
+                                    // response = response.splice(0,3).concat(response.splice(6,7));
+                                    break;
+                            }
+                            }
+                            }
+                            if (houses) {
+                            chat('Bot', response.splice(0, 3));
+                                    chat('Bot', undefined, houses);
+                                    $('#owl-example').attr('style', 'display: block !important');
+                                    $("#owl-example").owlCarousel({
+                            // Most important owl features
+                            items: 4,
+                                    itemsCustom: false,
+                                    itemsDesktop: [1000, 1],
+                                    itemsDesktopSmall: [980, 3],
+                                    itemsTablet: [768, 2],
+                                    itemsTabletSmall: false,
+                                    itemsMobile: [479, 1],
+                                    singleItem: false,
+                                    itemsScaleUp: false,
+                                    //Basic Speeds
+                                    slideSpeed: 200,
+                                    paginationSpeed: 800,
+                                    rewindSpeed: 1000,
+                                    //Autoplay
+                                    autoPlay: false,
+                                    stopOnHover: false,
+                                    // Navigation
+                                    navigation: false,
+                                    navigationText: ["prev", "next"],
+                                    rewindNav: true,
+                                    scrollPerPage: false,
+                                    //Pagination
+                                    pagination: true,
+                                    paginationNumbers: false,
+                                    // Responsive 
+                                    responsive: true,
+                                    responsiveRefreshRate: 200,
+                                    responsiveBaseWidth: window,
+                                    // CSS Styles
+                                    baseClass: "owl-carousel",
+                                    theme: "owl-theme",
+                                    //Lazy load
+                                    lazyLoad: false,
+                                    lazyFollow: true,
+                                    lazyEffect: "fade",
+                                    //Auto height
+                                    autoHeight: false,
+                                    //JSON 
+                                    jsonPath: false,
+                                    jsonSuccess: false,
+                                    //Mouse Events
+                                    dragBeforeAnimFinish: true,
+                                    mouseDrag: true,
+                                    touchDrag: true,
+                                    //Transitions
+                                    transitionStyle: false,
+                                    // Other
+                                    addClassActive: false,
+                                    //Callbacks
+                                    beforeUpdate: false,
+                                    afterUpdate: false,
+                                    beforeInit: false,
+                                    afterInit: false,
+                                    beforeMove: false,
+                                    afterMove: false,
+                                    afterAction: false,
+                                    startDragging: false,
+                                    afterLazyLoad: false
+
+                            });
+                                    chat('Bot', msg);
+                            } else {
+                            // $('#owl-example').hide();
+                            chat('Bot', response);
+                            }
+
+                            if (response[0].indexOf('I can look on social media') !== - 1) {
+                            $.get("https://jornodered.mybluemix.net/tweets", function(data) {
+                            var txt = "";
+                                    if (data.rows[1].ave < 0) {
+                            txt = 'Based on social media, this area has below average sentiment rating';
+                            } else {
+                            if (data.rows[1].ave < 4) {
+                            txt = 'Based on social media, this area has good sentiment rating (sentiment score: ' + data.rows[1].ave + ')';
+                            } else {
+                            txt = 'Based on social media, this area has excellemt sentiment rating';
+                            }
+                            }
+                            chat('Bot', txt);
+                            });
+                            }
+
+                            if (response[0].indexOf('wake up Chatty') !== - 1) {
+                            botInUse = 'Chatty';
+                                    $("#id_chattext").attr("placeholder", "Ask Chatty a question...").val("").focus();
+                                    chat('Bot', "Hi, I'm Chatty the chatbot");
+                            }
+
+                            if (botInUse === 'Chatty') {
+                            $('.chat-area').addClass('ducks');
+                                    $('.right-callout').addClass('lego');
+                                    $('.bot-name').html('Chatty :)');
+                            }
+
+                            // $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
+
+                            var objDiv = $('#id_botchathistory');
+                                    if (objDiv.length > 0) {
+                            objDiv[0].scrollTop = objDiv[0].scrollHeight;
+                            }
+                            }
+
+                            function processNotOK() {
+                            chat('Error', 'Error whilst attempting to talk to Bot');
+                            }
+
+                            function invokeAjax(message) {
+                            var contextdata = $('#id_contextdump').data('convContext');
+                                    console.log('checking stashed context data');
+                                    console.log(contextdata);
+                                    //var ajaxData = "msgdata=" + message;
+                                    var ajaxData = {};
+                                    ajaxData.msgdata = message;
+                                    if (contextdata) {
+                            ajaxData.context = contextdata;
+                            }
+
+                            if (botInUse === 'Bot') {
+                            $.ajax({
+                            type: 'POST',
+                                    url: 'botchat',
+                                    data: ajaxData,
+                                    success: processOK,
+                                    error: processNotOK
+                            });
+                            } else {
+                            $.ajax({
+                            type: 'POST',
+                                    url: 'kidchat',
+                                    data: ajaxData,
+                                    success: processOK,
+                                    error: processNotOK
+                            });
+                            }
+                            }
+
+                            // User has entered some text.
+                            function onChatClick(e) {
+                            e.preventDefault();
+                                    var txt = $('#id_chattext').val();
+                                    chat('You', txt);
+                                    invokeAjax(txt);
+                                    $('#id_chattext').val('');
+                            }
+
+
+                            (function () {
+                            'use strict';
+                                    // check for support (webkit only)
+                                    if (!('webkitSpeechRecognition' in window))
+                                    return;
+                                    var talkMsg = 'start talking';
+                                    // seconds to wait for more input after last
+                                    var patience = 6;
+                                    function capitalize(str) {
+                                    return str.length ? str[0].toUpperCase() + str.slice(1) : str;
+                                    }
+
+                            var inputEls = document.getElementsByClassName('speech-input');
+                                    [].forEach.call(inputEls, function (inputEl) {
+                            // create wrapper
+                            var wrapper = document.createElement('div');
+                                    wrapper.classList.add('si-wrapper');
+                                    // create mic button
+                                    var micBtn = document.createElement('button');
+                                    micBtn.classList.add('mic-btn');
+                                    micBtn.classList.add('off');
+                                    micBtn.classList.add('fa');
+                                    //micBtn.classList.add('show-for-large-only');
+                                    micBtn.classList.add('fa-microphone');
+                                    micBtn.textContent = '';
+                                    var micIcon = document.createElement('span');
+                                    var holderIcon = document.createElement('span');
+                                    micIcon.classList.add('si-mic');
+                                    holderIcon.classList.add('si-holder');
+                                    micBtn.appendChild(micIcon);
+                                    micBtn.appendChild(holderIcon);
+                                    // gather inputEl data
+                                    var nextNode = inputEl.nextSibling;
+                                    var parent = inputEl.parentNode;
+                                    var inputHeight = inputEl.offsetHeight;
+                                    var inputRightBorder = parseInt(getComputedStyle(inputEl).borderRightWidth, 10);
+                                    var buttonSize = 0.8 * inputHeight;
+                                    // Size bounds (useful for textareas).
+                                    if (buttonSize > 26)
+                                    buttonSize = 26;
+                                    // append mic and input to wrapper
+                                    wrapper.appendChild(parent.removeChild(inputEl));
+                                    wrapper.appendChild(micBtn);
+                                    // size and position mic and input
+                                    micBtn.style.top = 0.1 * inputHeight + 'px';
+                                    micBtn.style.height = micBtn.style.width = buttonSize + 'px';
+                                    inputEl.style.paddingRight = buttonSize - inputRightBorder + 'px';
+                                    // append wrapper where input was
+                                    parent.insertBefore(wrapper, nextNode);
+                                    // setup recognition
+                                    var finalTranscript = '';
+                                    var recognizing = false;
+                                    var timeout;
+                                    var oldPlaceholder = null;
+                                    var recognition = new webkitSpeechRecognition();
+                                    recognition.continuous = true;
+                                    function restartTimer() {
+                                    timeout = setTimeout(function () {
+                                    recognition.stop();
+                                    }, patience * 1000);
+                                    }
+
+                            recognition.onstart = function () {
+                            oldPlaceholder = inputEl.placeholder;
+                                    inputEl.placeholder = talkMsg;
+                                    recognizing = true;
+                                    micBtn.classList.add('listening');
+                                    restartTimer();
+                            };
+                                    recognition.onend = function () {
+                                    recognizing = false;
+                                            clearTimeout(timeout);
+                                            micBtn.classList.remove('listening');
+                                            if (oldPlaceholder !== null)
+                                            inputEl.placeholder = oldPlaceholder;
+                                    };
+                                    recognition.onresult = function (event) {
+                                    clearTimeout(timeout);
+                                            for (var i = event.resultIndex; i < event.results.length; ++i) {
+                                    if (event.results[i].isFinal) {
+                                    finalTranscript += event.results[i][0].transcript;
+                                    }
+                                    }
+                                    finalTranscript = capitalize(finalTranscript);
+                                            inputEl.value = finalTranscript;
+                                            restartTimer();
+                                    };
+                                    micBtn.addEventListener('click', function (event) {
+                                    event.preventDefault();
+                                            var counter = 0;
+                                            var countInt = setInterval(function () {
+                                            ++counter;
+                                                    $('.counter').text(counter);
+                                            }, 1000);
+                                            if ($(this).hasClass('off')) {
+                                    $(this).addClass('color-me-red animated pulse');
+                                            $('.mic-in-use').removeClass('hide').fadeIn();
+                                            countInt;
+                                            micBtn.classList.add('on');
+                                            micBtn.classList.remove('off');
+                                    } else if ($(this).hasClass('on')){
+                                    //window.clearInterval(countInt);
+                                    $(this).removeClass('color-me-red animated pulse');
+                                            $('.mic-in-use').addClass('hide').fadeOut();
+                                            $('this').removeClass('on').addClass('off');
+                                    }
 
 
 
-        </script>
-    </body>
-</html>
+                                    if (recognizing) {
+                                    recognition.stop();
+                                            return;
+                                    }
+                                    inputEl.value = finalTranscript = '';
+                                            recognition.start();
+                                    }, false);
+                            });
+                            })();
+
+                        </script>
+
+                        </body>
+                        </html>
