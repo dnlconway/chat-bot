@@ -563,13 +563,15 @@
                     botInUse = 'Chatty';
                     //$("#id_chattext").attr("placeholder", "Ask Chatty a question...").val("").focus();
                     chat('Bot', "Hi, I'm Chatty the chatbot");
+                    $('#kid').foundation('open');
                 }
 
                 if (botInUse === 'Chatty') {
                     $('.chat-area').addClass('ducks');
                     $('.right-callout').addClass('lego');
                     $('.bot-name').html('Chatty :)');
-                    $('#kid').foundation('open');
+                    $('.sm-logo').attr('src','http://www.whitestrailers.com/bot/img/bot-pic.png');
+                    
                 }
 
                 // $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
