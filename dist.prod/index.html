@@ -249,7 +249,7 @@
                     }
                 }
             });
-            
+
             $("#id_chattext").data("emojioneArea").editor.focus();
 
             Pace.on("start", function () {
@@ -263,7 +263,7 @@
                 $('.sm-logo').fadeIn().css('display', 'block').addClass('slideInDown');
                 $('.logo').delay(500).fadeIn();
             });
-            
+
             $(document).ready(function () {
 
 
@@ -306,282 +306,272 @@
                     }
                 });
                 botInUse = 'Bot';
-            });
 
-            $('.menu-btn').on('click', function () {
+                $('.menu-btn').on('click', function () {
 
-                if ($(this).hasClass('off')) {
-                    $(this).removeClass('off').addClass('on');
-                    $('.target').text('Menu');
-                } else {
-                    $(this).removeClass('on').addClass('off');
-                    $('.target').text('Chat');
-                }
-            });
-
-
-            function twitterOK(response) {
-                //console.log(response);
-            }
-
-            function twitterNotOK() {
-                chat('Error', 'Error whilst attempting to talk to Bot');
-            }
-            var d = new Date();
-            var time = d.getHours() + ":" + d.getMinutes();
-
-            // if javascript is enabled on the browser then can
-            // remove the warning message
-            function javascriptCheck() {
-                $('#no-script').remove();
-            }
-
-            function createNewDiv(who, message, houses) {
-
-                if (houses) {
-                    return '<div id="owl-example" class="owl-carousel">' +
-                            '<div class="card animated bounceIn">' +
-                            '<img src="http://www.whitestrailers.com/bot/img/house-1.png">' +
-                            '<ul class="card-content">' +
-                            '<li class="house-type"><strong>Detached House | 2 Beds | 2 Baths</strong></li>' +
-                            '<li class="house-desc">16 Forest View, Raheny, Dublin 5</li>' +
-                            '<li class="house-price"><small>€295,000</small></li>' +
-                            '</ul>' +
-                            '<a href="#"><div class="house-btn">VIEW</div></a>' +
-                            '</div>' +
-                            '<div class="card animated bounceIn">' +
-                            '<img src="http://www.whitestrailers.com/bot/img/house-2.png">' +
-                            '<ul class="card-content">' +
-                            '<li class="house-type"><strong>Detached House | 3 Beds | 3 Baths</strong></li>' +
-                            '<li class="house-desc">24 Cherry LaneRaheny, Dublin 5</li>' +
-                            '<li class="house-price"><small>€280,000</small></li>' +
-                            '</ul>' +
-                            '<a href="#"><div class="house-btn">VIEW</div></a>' +
-                            '</div>' +
-                            '<div class="card animated bounceIn">' +
-                            '<img src="http://www.whitestrailers.com/bot/img/house-3.png">' +
-                            '<ul class="card-content">' +
-                            '<li class="house-type"><strong>Detached House | 3 Beds | 3 Baths</strong></li>' +
-                            '<li class="house-desc">11 Wood Avenue, Raheny, Dublin 5</li>' +
-                            '<li class="house-price"><small>€280,000</small></li>' +
-                            '</ul><a href="#"><div class="house-btn">VIEW</div></a>' +
-                            '</div>' +
-                            '</div>';
-                } else {
-                    var text = "";
-                    if (message instanceof Array) {
-                        for (var i = 0; i < message.length; i++) {
-                            text += ' ' + message[i];
-                        }
-                        ;
+                    if ($(this).hasClass('off')) {
+                        $(this).removeClass('off').addClass('on');
+                        $('.target').text('Menu');
                     } else {
-                        text = message;
+                        $(this).removeClass('on').addClass('off');
+                        $('.target').text('Chat');
                     }
+                });
 
-                    if (who === 'Bot') {
-                        // function botDelay() {
-                        return '<div class="bot-wrapper animated pulse"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot">' + text + '</div>';
-                        // }
-                        // return setTimeout(botDelay, 2000);
+
+                function twitterOK(response) {
+                    //console.log(response);
+                }
+
+                function twitterNotOK() {
+                    chat('Error', 'Error whilst attempting to talk to Bot');
+                }
+                var d = new Date();
+                var time = d.getHours() + ":" + d.getMinutes();
+
+                // if javascript is enabled on the browser then can
+                // remove the warning message
+                function javascriptCheck() {
+                    $('#no-script').remove();
+                }
+
+                function createNewDiv(who, message, houses) {
+
+                    if (houses) {
+                        return '<div id="owl-example" class="owl-carousel">' +
+                                '<div class="card animated bounceIn">' +
+                                '<img src="http://www.whitestrailers.com/bot/img/house-1.png">' +
+                                '<ul class="card-content">' +
+                                '<li class="house-type"><strong>Detached House | 2 Beds | 2 Baths</strong></li>' +
+                                '<li class="house-desc">16 Forest View, Raheny, Dublin 5</li>' +
+                                '<li class="house-price"><small>€295,000</small></li>' +
+                                '</ul>' +
+                                '<a href="#"><div class="house-btn">VIEW</div></a>' +
+                                '</div>' +
+                                '<div class="card animated bounceIn">' +
+                                '<img src="http://www.whitestrailers.com/bot/img/house-2.png">' +
+                                '<ul class="card-content">' +
+                                '<li class="house-type"><strong>Detached House | 3 Beds | 3 Baths</strong></li>' +
+                                '<li class="house-desc">24 Cherry LaneRaheny, Dublin 5</li>' +
+                                '<li class="house-price"><small>€280,000</small></li>' +
+                                '</ul>' +
+                                '<a href="#"><div class="house-btn">VIEW</div></a>' +
+                                '</div>' +
+                                '<div class="card animated bounceIn">' +
+                                '<img src="http://www.whitestrailers.com/bot/img/house-3.png">' +
+                                '<ul class="card-content">' +
+                                '<li class="house-type"><strong>Detached House | 3 Beds | 3 Baths</strong></li>' +
+                                '<li class="house-desc">11 Wood Avenue, Raheny, Dublin 5</li>' +
+                                '<li class="house-price"><small>€280,000</small></li>' +
+                                '</ul><a href="#"><div class="house-btn">VIEW</div></a>' +
+                                '</div>' +
+                                '</div>';
                     } else {
-                        return '<div class="human-wrapper animated pulse"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human">' + text + '<div class="time">' + time + '   <i class="fa fa-check" aria-hidden="true"></i></div></div>';
-                    }
-                }
-            }
-
-            function chat(person, txt, houses) {
-                $('#id_botchathistory').append(createNewDiv(person, txt, houses));
-            }
-
-            function processOK(response) {
-                // console.log(response);
-
-                var houses = false;
-                var msg = '';
-                for (var i = 0; i < response.length; i++) {
-                    console.log(response[i]);
-                    console.log(response[i].indexOf('found the following properties'));
-                    if (response[i].indexOf('found the following properties') !== -1) {
-                        houses = true;
-                        if (houses) {
-                            msg = response[7];
-                            // response = response.splice(0,3).concat(response.splice(6,7));
-                            break;
-                        }
-                    }
-                }
-                if (houses) {
-                    chat('Bot', response.splice(0, 3));
-                    chat('Bot', undefined, houses);
-                    $('#owl-example').attr('style', 'display: block !important');
-
-                    $("#owl-example").owlCarousel({
-                        // Most important owl features
-                        items: 4,
-                        itemsCustom: false,
-                        itemsDesktop: [1000, 1],
-                        itemsDesktopSmall: [980, 3],
-                        itemsTablet: [768, 2],
-                        itemsTabletSmall: false,
-                        itemsMobile: [479, 1],
-                        singleItem: false,
-                        itemsScaleUp: false,
-                        //Basic Speeds
-                        slideSpeed: 200,
-                        paginationSpeed: 800,
-                        rewindSpeed: 1000,
-                        //Autoplay
-                        autoPlay: false,
-                        stopOnHover: false,
-                        // Navigation
-                        navigation: false,
-                        navigationText: ["prev", "next"],
-                        rewindNav: true,
-                        scrollPerPage: false,
-                        //Pagination
-                        pagination: true,
-                        paginationNumbers: false,
-                        // Responsive 
-                        responsive: true,
-                        responsiveRefreshRate: 200,
-                        responsiveBaseWidth: window,
-                        // CSS Styles
-                        baseClass: "owl-carousel",
-                        theme: "owl-theme",
-                        //Lazy load
-                        lazyLoad: false,
-                        lazyFollow: true,
-                        lazyEffect: "fade",
-                        //Auto height
-                        autoHeight: false,
-                        //JSON 
-                        jsonPath: false,
-                        jsonSuccess: false,
-                        //Mouse Events
-                        dragBeforeAnimFinish: true,
-                        mouseDrag: true,
-                        touchDrag: true,
-                        //Transitions
-                        transitionStyle: false,
-                        // Other
-                        addClassActive: false,
-                        //Callbacks
-                        beforeUpdate: false,
-                        afterUpdate: false,
-                        beforeInit: false,
-                        afterInit: false,
-                        beforeMove: false,
-                        afterMove: false,
-                        afterAction: false,
-                        startDragging: false,
-                        afterLazyLoad: false
-
-                    });
-
-                    chat('Bot', msg);
-                } else {
-                    // $('#owl-example').hide();
-                    chat('Bot', response);
-                }
-
-                if (response[0].indexOf('I can look on social media') !== -1) {
-                    $.get("https://jornodered.mybluemix.net/tweets", function (data) {
-                        var txt = "";
-                        if (data.rows[1].ave < 0) {
-                            txt = 'Based on social media, this area has below average sentiment rating';
+                        var text = "";
+                        if (message instanceof Array) {
+                            for (var i = 0; i < message.length; i++) {
+                                text += ' ' + message[i];
+                            }
+                            ;
                         } else {
-                            if (data.rows[1].ave < 4) {
-                                txt = 'Based on social media, this area has good sentiment rating (sentiment score: ' + data.rows[1].ave + ')';
-                            } else {
-                                txt = 'Based on social media, this area has excellemt sentiment rating';
+                            text = message;
+                        }
+
+                        if (who === 'Bot') {
+                            // function botDelay() {
+                            return '<div class="bot-wrapper animated pulse"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot">' + text + '</div>';
+                            // }
+                            // return setTimeout(botDelay, 2000);
+                        } else {
+                            return '<div class="human-wrapper animated pulse"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human">' + text + '<div class="time">' + time + '   <i class="fa fa-check" aria-hidden="true"></i></div></div>';
+                        }
+                    }
+                }
+
+                function chat(person, txt, houses) {
+                    $('#id_botchathistory').append(createNewDiv(person, txt, houses));
+                }
+
+                function processOK(response) {
+                    // console.log(response);
+
+                    var houses = false;
+                    var msg = '';
+                    for (var i = 0; i < response.length; i++) {
+                        console.log(response[i]);
+                        console.log(response[i].indexOf('found the following properties'));
+                        if (response[i].indexOf('found the following properties') !== -1) {
+                            houses = true;
+                            if (houses) {
+                                msg = response[7];
+                                // response = response.splice(0,3).concat(response.splice(6,7));
+                                break;
                             }
                         }
-                        chat('Bot', txt);
-                    });
+                    }
+                    if (houses) {
+                        chat('Bot', response.splice(0, 3));
+                        chat('Bot', undefined, houses);
+                        $('#owl-example').attr('style', 'display: block !important');
+
+                        $("#owl-example").owlCarousel({
+                            // Most important owl features
+                            items: 4,
+                            itemsCustom: false,
+                            itemsDesktop: [1000, 1],
+                            itemsDesktopSmall: [980, 3],
+                            itemsTablet: [768, 2],
+                            itemsTabletSmall: false,
+                            itemsMobile: [479, 1],
+                            singleItem: false,
+                            itemsScaleUp: false,
+                            //Basic Speeds
+                            slideSpeed: 200,
+                            paginationSpeed: 800,
+                            rewindSpeed: 1000,
+                            //Autoplay
+                            autoPlay: false,
+                            stopOnHover: false,
+                            // Navigation
+                            navigation: false,
+                            navigationText: ["prev", "next"],
+                            rewindNav: true,
+                            scrollPerPage: false,
+                            //Pagination
+                            pagination: true,
+                            paginationNumbers: false,
+                            // Responsive 
+                            responsive: true,
+                            responsiveRefreshRate: 200,
+                            responsiveBaseWidth: window,
+                            // CSS Styles
+                            baseClass: "owl-carousel",
+                            theme: "owl-theme",
+                            //Lazy load
+                            lazyLoad: false,
+                            lazyFollow: true,
+                            lazyEffect: "fade",
+                            //Auto height
+                            autoHeight: false,
+                            //JSON 
+                            jsonPath: false,
+                            jsonSuccess: false,
+                            //Mouse Events
+                            dragBeforeAnimFinish: true,
+                            mouseDrag: true,
+                            touchDrag: true,
+                            //Transitions
+                            transitionStyle: false,
+                            // Other
+                            addClassActive: false,
+                            //Callbacks
+                            beforeUpdate: false,
+                            afterUpdate: false,
+                            beforeInit: false,
+                            afterInit: false,
+                            beforeMove: false,
+                            afterMove: false,
+                            afterAction: false,
+                            startDragging: false,
+                            afterLazyLoad: false
+
+                        });
+
+                        chat('Bot', msg);
+                    } else {
+                        // $('#owl-example').hide();
+                        chat('Bot', response);
+                    }
+
+                    if (response[0].indexOf('I can look on social media') !== -1) {
+                        $.get("https://jornodered.mybluemix.net/tweets", function (data) {
+                            var txt = "";
+                            if (data.rows[1].ave < 0) {
+                                txt = 'Based on social media, this area has below average sentiment rating';
+                            } else {
+                                if (data.rows[1].ave < 4) {
+                                    txt = 'Based on social media, this area has good sentiment rating (sentiment score: ' + data.rows[1].ave + ')';
+                                } else {
+                                    txt = 'Based on social media, this area has excellemt sentiment rating';
+                                }
+                            }
+                            chat('Bot', txt);
+                        });
+
+                    }
+
+                    if (response[0].indexOf('wake up Chatty') !== -1) {
+                        botInUse = 'Chatty';
+                        //$("#id_chattext").attr("placeholder", "Ask Chatty a question...").val("").focus();
+                        chat('Bot', "Hi, I'm Chatty the chatbot");
+                        $('#kid').foundation('open');
+                    }
+
+                    if (botInUse === 'Chatty') {
+                        $('.chat-area').addClass('ducks');
+                        $('.right-callout').addClass('lego');
+                        $('.bot-name').html('Chatty :)');
+                        $('.sm-logo').attr('src', 'http://www.whitestrailers.com/bot/img/chatty-pic.png');
+
+                    }
+
+                    // $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
+
+                    var objDiv = $('#id_botchathistory');
+                    if (objDiv.length > 0) {
+                        objDiv[0].scrollTop = objDiv[0].scrollHeight;
+                    }
+                }
+
+                function processNotOK() {
+                    chat('Error', 'Error whilst attempting to talk to Bot');
+                }
+
+                function invokeAjax(message) {
+                    var contextdata = $('#id_contextdump').data('convContext');
+                    console.log('checking stashed context data');
+                    console.log(contextdata);
+                    //var ajaxData = "msgdata=" + message;
+                    var ajaxData = {};
+                    ajaxData.msgdata = message;
+                    if (contextdata) {
+                        ajaxData.context = contextdata;
+                    }
+
+                    if (botInUse === 'Bot') {
+                        $.ajax({
+                            type: 'POST',
+                            url: 'botchat',
+                            data: ajaxData,
+                            success: processOK,
+                            error: processNotOK
+                        });
+                    } else {
+                        $.ajax({
+                            type: 'POST',
+                            url: 'kidchat',
+                            data: ajaxData,
+                            success: processOK,
+                            error: processNotOK
+                        });
+                    }
+                }
+
+                // User has entered some text.
+                function onChatClick(e) {
+                    e.preventDefault();
+                    var txt = $('.emojionearea-editor').html();
+                    chat('You', txt);
+                    invokeAjax(txt);
+                    //$('.chat-input').text('');
+
+                    setTimeout(function () {
+                        $('.fa-check').addClass('fa-seen');
+                    }, 2000);
 
                 }
 
-                if (response[0].indexOf('wake up Chatty') !== -1) {
-                    botInUse = 'Chatty';
-                    //$("#id_chattext").attr("placeholder", "Ask Chatty a question...").val("").focus();
-                    chat('Bot', "Hi, I'm Chatty the chatbot");
-                    $('#kid').foundation('open');
-                }
 
-                if (botInUse === 'Chatty') {
-                    $('.chat-area').addClass('ducks');
-                    $('.right-callout').addClass('lego');
-                    $('.bot-name').html('Chatty :)');
-                    $('.sm-logo').attr('src', 'http://www.whitestrailers.com/bot/img/chatty-pic.png');
-
-                }
-
-                // $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
-
-                var objDiv = $('#id_botchathistory');
-                if (objDiv.length > 0) {
-                    objDiv[0].scrollTop = objDiv[0].scrollHeight;
-                }
-            }
-
-            function processNotOK() {
-                chat('Error', 'Error whilst attempting to talk to Bot');
-            }
-
-            function invokeAjax(message) {
-                var contextdata = $('#id_contextdump').data('convContext');
-                console.log('checking stashed context data');
-                console.log(contextdata);
-                //var ajaxData = "msgdata=" + message;
-                var ajaxData = {};
-                ajaxData.msgdata = message;
-                if (contextdata) {
-                    ajaxData.context = contextdata;
-                }
-
-                if (botInUse === 'Bot') {
-                    $.ajax({
-                        type: 'POST',
-                        url: 'botchat',
-                        data: ajaxData,
-                        success: processOK,
-                        error: processNotOK
-                    });
-                } else {
-                    $.ajax({
-                        type: 'POST',
-                        url: 'kidchat',
-                        data: ajaxData,
-                        success: processOK,
-                        error: processNotOK
-                    });
-                }
-            }
-
-            // User has entered some text.
-            function onChatClick(e) {
-                e.preventDefault();
-                var txt = $('.emojionearea-editor').html();
-                chat('You', txt);
-                invokeAjax(txt);
-                //$('.chat-input').text('');
-
-                setTimeout(function () {
-                    $('.fa-check').addClass('fa-seen');
-                }, 2000);
-
-
-
-
-
-            }
-
-        </script>
-        <script>
-            /*global webkitSpeechRecognition */
-
-            (function () {
-                'use strict';
 
                 // check for support (webkit only)
                 if (!('webkitSpeechRecognition' in window))
@@ -702,10 +692,7 @@
                             $(this).removeClass('color-me-red animated pulse');
                             $('.mic-in-use').addClass('hide').fadeOut();
                             $('this').removeClass('on').addClass('off');
-
                         }
-
-
 
                         if (recognizing) {
                             recognition.stop();
@@ -715,11 +702,7 @@
                         recognition.start();
                     }, false);
                 });
-            })();
-
-
-
-
+            });
 
         </script>
     </body>
