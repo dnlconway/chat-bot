@@ -8,16 +8,17 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css/foundation.css">
-        <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css/animate.css">
-        <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css/owl.carousel.css">
-        <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css/owl.theme.css">
-        <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css/emojionearea.css">
 
-        
+
+
+        <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css/vendor.min.css">
         <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css/app.css">
-        
-        
+
+
+
+        <script src="http://www.whitestrailers.com/bot/js/scripts.min.js"></script>
+
+
 
 
 
@@ -71,11 +72,11 @@
             </button>
         </div>
         <!-- / Modal ~ Menu -->
-        
+
         <!-- Modal ~ Team -->
         <div class="reveal" data-animation-in="slide-in-down" data-animation-out="slide-out-up" id="team" data-reveal>
             <div class="team-pic">
-            <img src="http://www.whitestrailers.com/bot/img/team.jpg" alt="The AIB Watson Team Burning the midnight oil">
+                <img src="http://www.whitestrailers.com/bot/img/team.jpg" alt="The AIB Watson Team Burning the midnight oil">
             </div>
             <h1><span>Meet The Team</span></h1>
             <div class="members">
@@ -187,7 +188,7 @@
                                 <li>Option 2</li>
                                 <li>Option 3</li>
                             </ul>
-                            
+
 
                         </div>
                         <!-- / Chat Area -->
@@ -234,37 +235,22 @@
             </div><!-- / Blurs Background -->
         </div><!-- /.container -->
 
-
-        
-        
-        <script src="http://www.whitestrailers.com/bot/js/scripts.min.js"></script>
-        <script src="http://www.whitestrailers.com/bot/js/vendor/owl.carousel.min.js"></script>
-        <script src="http://www.whitestrailers.com/bot/js/vendor/pace.min.js"></script>
-
         <script>
-            $(document).ready(function () {
-                
-                    
-                $("#id_chattext").emojioneArea({
-                    events: {
-                        keyup: function (editor, event) {
-                            // catches everything but enter
-                            
-                            if (event.which === 13) {
-                                onChatClick(event);
-                                $('.emojionearea-editor').empty();
-                            }
+            $(document).foundation();
+
+            $("#id_chattext").emojioneArea({
+                events: {
+                    keyup: function (editor, event) {
+                        // catches everything but enter
+                        if (event.which === 13) {
+                            onChatClick(event);
+                            $('.emojionearea-editor').empty();
                         }
                     }
-                });
-                $("#id_chattext").data("emojioneArea").editor.focus();
+                }
             });
-        </script>
-        <script> $(document).foundation();</script>
-
-
-
-        <script type="text/javascript">
+            
+            $("#id_chattext").data("emojioneArea").editor.focus();
 
             Pace.on("start", function () {
                 $(".loading-bg").show();
@@ -276,12 +262,8 @@
                 $(".fadeIn, .rubberBand").addClass("animated");
                 $('.sm-logo').fadeIn().css('display', 'block').addClass('slideInDown');
                 $('.logo').delay(500).fadeIn();
-
             });
-
-
-
-            //$(document).foundation();
+            
             $(document).ready(function () {
 
 
@@ -291,44 +273,11 @@
                     $('.input-search').focus();
                     $('.search-btn').removeClass('fa-search').addClass('x');
                 });
-                
+
                 $('#search').on('closed.zf.reveal', function () {
-                
+
                     $('.search-btn').addClass('fa-search').removeClass('x');
                 });
-                
-                
-
-                
-
-
-
-
-//
-//                $("#id_chattext").emojioneArea({
-//                    
-//                    events: {
-//                        keyup: function (editor, event) {
-//                            // catches everything but enter
-//                            
-//                            if (event.which === 13) {
-//                                onChatClick(event);
-//                                $('.emojionearea-editor').empty();
-//                            }
-//                        }
-//                    },
-//                    focus: function (editor, event) {
-//                        alert('Hey');
-//                    }
-//                });
-////                
-
-
-
-
-
-
-
 
                 var toggles = document.querySelectorAll(".c-hamburger");
 
@@ -358,28 +307,21 @@
                 });
                 botInUse = 'Bot';
             });
-            
-            $('.menu-btn').on('click', function(){
-                
-                if($(this).hasClass('off')){
+
+            $('.menu-btn').on('click', function () {
+
+                if ($(this).hasClass('off')) {
                     $(this).removeClass('off').addClass('on');
                     $('.target').text('Menu');
                 } else {
                     $(this).removeClass('on').addClass('off');
                     $('.target').text('Chat');
                 }
-                
-                
             });
-            
-            
-
-
-
 
 
             function twitterOK(response) {
-                console.log(response);
+                //console.log(response);
             }
 
             function twitterNotOK() {
@@ -570,8 +512,8 @@
                     $('.chat-area').addClass('ducks');
                     $('.right-callout').addClass('lego');
                     $('.bot-name').html('Chatty :)');
-                    $('.sm-logo').attr('src','http://www.whitestrailers.com/bot/img/chatty-pic.png');
-                    
+                    $('.sm-logo').attr('src', 'http://www.whitestrailers.com/bot/img/chatty-pic.png');
+
                 }
 
                 // $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
@@ -742,29 +684,29 @@
 
                     micBtn.addEventListener('click', function (event) {
                         event.preventDefault();
-                        
-                        var counter = 0;
-                    var countInt = setInterval(function () {
-                        ++counter;
-                        $('.counter').text(counter);
-                    }, 1000);
 
-                    if ($(this).hasClass('off')) {
-                        $(this).addClass('color-me-red animated pulse');
-                        $('.mic-in-use').removeClass('hide').fadeIn();
-                        countInt;
-                        micBtn.classList.add('on');
-                        micBtn.classList.remove('off');
-                    } else if($(this).hasClass('on')){
-                        //window.clearInterval(countInt);
-                        $(this).removeClass('color-me-red animated pulse');
-                        $('.mic-in-use').addClass('hide').fadeOut();
-                        $('this').removeClass('on').addClass('off');
-                        
-                    } 
-                        
-                        
-                        
+                        var counter = 0;
+                        var countInt = setInterval(function () {
+                            ++counter;
+                            $('.counter').text(counter);
+                        }, 1000);
+
+                        if ($(this).hasClass('off')) {
+                            $(this).addClass('color-me-red animated pulse');
+                            $('.mic-in-use').removeClass('hide').fadeIn();
+                            countInt;
+                            micBtn.classList.add('on');
+                            micBtn.classList.remove('off');
+                        } else if ($(this).hasClass('on')) {
+                            //window.clearInterval(countInt);
+                            $(this).removeClass('color-me-red animated pulse');
+                            $('.mic-in-use').addClass('hide').fadeOut();
+                            $('this').removeClass('on').addClass('off');
+
+                        }
+
+
+
                         if (recognizing) {
                             recognition.stop();
                             return;
