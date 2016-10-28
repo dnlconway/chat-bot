@@ -3,352 +3,779 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=0.8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Smart Move</title>
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Lobster+Two:400,700" rel="stylesheet">
-        <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css/foundation.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/foundation.css">
         <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css/animate.css">
         <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css/owl.carousel.css">
-        <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css//owl.theme.css">
-        <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css/app.css">
-        <script src="http://www.whitestrailers.com/bot/js/vendor/jquery.js"></script>
-        <script src="http://www.whitestrailers.com/bot/js/vendor/pace.min.js"></script>
+        <link rel="stylesheet" href="http://www.whitestrailers.com/bot/css/owl.theme.css">
+        <link rel="stylesheet" href="css/emojionearea.css">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/emojione/2.2.6/assets/css/emojione.min.css"/>
+        <link rel="stylesheet" href="css/app.css">
+        <script src="js/vendor/jquery.js"></script>
+        <script src="js/vendor/pace.min.js"></script>
+
+
+
     </head>
     <body>
-        <div class="off-canvas-wrapper">
-            <div class="off-canvas-wrapper-inner">
-                <div class="title-bar hide-for-medium">
-                    <div class="title-bar-left">
-                        <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
-                        <span class="title-bar-title">Angular Foundation</span>
-                    </div>
+
+        <!-- Loading Screen -->
+        <div class="loading-bg">
+            <div class="row">
+                <div class="columns large-5 large-centered">
+                    <img class="mt-100" src="img/load.png">
                 </div>
-                <div class="off-canvas position-left">
-                    <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
-                    <ul class="mobile-ofc vertical menu">
-                        <li><a href="#getting_started">Getting started</a></li>
-                        <li>
-                            <a href="#">Directives</a>
-                            <ul id="directives-list" class="submenu menu vertical">
-                                <li><a href="#accordion">Accordion</a></li><li><a href="#alert">Alert</a></li><li><a href="#buttons">Buttons</a></li><li><a href="#dropdownMenu">Dropdown Menu</a></li><li><a href="#dropdownToggle">Dropdown Toggle</a></li><li><a href="#modal">Modal</a></li><li><a href="#offcanvas">Offcanvas</a></li><li><a href="#pagination">Pagination</a></li><li><a href="#progressbar">Progressbar</a></li><li><a href="#rating">Rating</a></li><li><a href="#tabs">Tabs</a></li><li><a href="#tooltip">Tooltip</a></li>
+            </div>
+
+            <div class="row">
+                <div class="columns large-1 large-centered ">
+                    <img class='aib-logo' src="img/aib.png">
+                </div>
+            </div>
+        </div>
+        <!-- / Loading Screen -->
+
+        <!-- Top Navigation Bar -->
+        <div data-sticky-container>
+            <div class="title-bar" data-sticky data-options="marginTop:0;" style="width:100%" data-top-anchor="1" data-btm-anchor="content:bottom">
+                <div class="title-bar-left">
+                    <a class="menu-btn off" data-toggle="menu" ><button class="c-hamburger c-hamburger--htx"><span>toggle menu</span></button><span class="target hide-for-small-only">Chat</span></a>
+                </div>
+                <div class="title-bar-middle">
+                    <a href="#"><img class="logo animated rubberBand" src="http://www.whitestrailers.com/bot/img/logo.png"></a>
+
+                </div>
+                <div class="title-bar-right"><a data-toggle="search"><i class="search-btn fa fa-search fa-2x" aria-hidden="true"></i></a></div>
+            </div>
+        </div>
+        <!-- / Top Navigation Bar -->
+
+        <!-- Modal ~ Menu -->
+        <div class="reveal" data-animation-in="slide-in-down" data-animation-out="slide-out-up" id="menu" data-reveal>
+            <ul class="sm-menu">
+                <li><a href="#">Preparing to Buy<span><br>Ipsum dolor sit amet consectetur adipiscing elit</span></a><hr></li>
+                <li><a href="#">Getting Mortgage Ready<span><br>Sit amet consectetur adipiscing elit</span></a><hr></li>
+                <li><a href="#">Find a Home<span><br>Dolor sit amet, consectetur adipiscing elit</span></a><hr></li>
+                <li><a href="#">Buying & Moving In<span><br>Consectetur adipiscing elit</span></a><hr></li>
+                <li><a href="#">Calculators<span><br>Lorem ipsum dolor sit amet</span></a><hr></li>
+            </ul>
+            <img class="menu-logo" alt="Powered by AIB Digital" src="img/aib.png">
+            <div class="more-info"><i class="fa fa-code-fork" aria-hidden="true"></i>Version 1.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-users" aria-hidden="true"></i><span class="underline-link"><a data-toggle="team">Meet the Team</a></span></div>
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <!-- / Modal ~ Menu -->
+        
+        <!-- Modal ~ Team -->
+        <div class="reveal" data-animation-in="slide-in-down" data-animation-out="slide-out-up" id="team" data-reveal>
+            <div class="team-pic">
+            <img src="img/team.jpg" alt="The AIB Watson Team Burning the midnight oil">
+            </div>
+            <h1><span>Meet The Team</span></h1>
+            <div class="members">
+                <div class="pic"></div>
+                <div class="person">
+                    <h3>Pierce</h3>
+                    <p>UI/UX Designer</p>
+                    <p>Assisted Channels</p>
+                </div>
+            </div>
+            <div class="members">
+                <div class="pic"></div>
+                <div class="person">
+                    <h3>Pierce</h3>
+                    <p>UI/UX Designer</p>
+                    <p>Assisted Channels</p>
+                </div>
+            </div>
+            <div class="members">
+                <div class="pic"></div>
+                <div class="person">
+                    <h3>Pierce</h3>
+                    <p>UI/UX Designer</p>
+                    <p>Assisted Channels</p>
+                </div>
+            </div>
+            <div class="members">
+                <div class="pic"></div>
+                <div class="person">
+                    <h3>Pierce</h3>
+                    <p>UI/UX Designer</p>
+                    <p>Assisted Channels</p>
+                </div>
+            </div>
+            <div class="members">
+                <div class="pic"></div>
+                <div class="person">
+                    <h3>Pierce</h3>
+                    <p>UI/UX Designer</p>
+                    <p>Assisted Channels</p>
+                </div>
+            </div>
+            <div class="members">
+                <div class="pic"></div>
+                <div class="person">
+                    <h3>Pierce</h3>
+                    <p>UI/UX Designer</p>
+                    <p>Assisted Channels</p>
+                </div>
+            </div>
+            <p></p>
+            <img class="menu-logo" alt="Powered by AIB Digital" src="img/aib.png">
+            <div class="more-info"><i class="fa fa-code-fork" aria-hidden="true"></i>Version 1.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-users" aria-hidden="true"></i><span class="underline-link">Meet the Team</span></div>
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <!-- / Modal ~ Team -->
+
+        <!-- Modal ~ Kids Play -->
+        <div  id="kid" class="reveal" data-animation-in="scale-in-up" data-animation-out="scale-out-up" data-reveal>
+            <img src="img/chatty-modal.png" alt="Hi im Chatty the Hero Bot">
+            <button data-close class="lets-go">Lets Go Chat...</button>
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <!-- / Modal ~ Kids Play -->
+
+        <!-- Modal ~ Search -->
+        <div class="full reveal" id="search" data-animation-in="slide-in-down" data-animation-out="slide-out-up"  data-reveal>
+            <div class="wrapper-search">
+                <p><span>Search</span></p>
+                <input class="input-search" type="search" name="firstname" placeholder="Search" /><br>
+                <ul class="suggestions">
+                    <li><button>Meet the Team</button></li>
+                    <li><button>Mortgages</button></li>
+                    <li><button>Calculators</button></li>
+                    <li><button>Mortgage Tips</button></li>
+                    <li><button>Find a Home</button></li>
+                </ul>
+                <button class="close-button" data-close aria-label="Close reveal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <img class="menu-logo" alt="Powered by AIB" src="img/aib.png">
+            </div>
+        </div>
+        <!-- / Modal ~ Search -->
+
+
+        <div class='blur on'> <!-- Blurs Background -->
+            <div role="main">
+                <div class="container">
+                    <div class="row">
+
+                        <!-- Chat Area -->
+                        <div id="id_botchathistory" class="columns large-9 medium-12 small-12 chat-area">
+                            <div class="bot-wrapper pulse">
+                                <img class="bot-pic" src="img/bot-pic.png">
+                                <div class="bot">Hello, I'm a bot and my name is Smart Move. I hope you're well today.      Looking for a new home? Perhaps I can help. What area are you interested in?
+                                </div>
+                                <div class="mic-in-use hide">
+                                    <i class="fa fa-microphone" aria-hidden="true"></i>Microphone in use  <span class="timer"><span class="counter">0</span> secs</span>
+                                </div>
+                            </div>
+
+                            <ul class="btn-options hide">
+                                <li>Option 1</li>
+                                <li>Option 2</li>
+                                <li>Option 3</li>
                             </ul>
-                        </li>
-                        <li><a href="#animations">Animations</a></li>
-                    </ul>
-                </div>
-                <div class="off-canvas-content">
-                    <div class="marketing-topbar show-for-medium">
-                        <div class="top-bar-left">
-                            <a class="left-off-canvas-toggle menu-icon"><img src="http://www.whitestrailers.com/bot/img/menu.png"></a>
-                            <span class="nav-page">Chat</span>
-                        </div>
-                        <div class="top-bar-middle">
-                            <a href="#"><img class="logo animated rubberBand" src="http://www.whitestrailers.com/bot/img/logo.png"></a>
-                        </div>
+                            <a data-toggle="kid">Kids Play</a>
 
-                        <div class="top-bar-right">
-                            <a href="#"><img class="search-btn" src="http://www.whitestrailers.com/bot/img/search-icn.png"></a>
                         </div>
+                        <!-- / Chat Area -->
+
+                        <!-- Right Side Bar for Large Screens Only -->
+                        <div class="columns large-3 large-centered right-callout">
+                            <img class="sm-logo text-center animated" src="img/sm-logo-white.svg"  alt="Bot Profile Image">
+                            <p class="text-center animation-time-2 fadeIn"><span class="bot-name">Smart<strong>Move</strong></span><br><span class="bot-job lobster">Making your move simple</span></p>
+                            <p class="text-center animation-time-2 fadeIn">The danger of the past was that men became slaves. The danger of the future is that <strong>men may become robots</strong>.</p>
+                            <a href="https://mortgage.aib.ie/" target="_blank" class="centered btn-callout fadeIn">Mortgage Calculator</a>
+                        </div>
+                        <!-- / Right Side Bar -->
                     </div>
 
-                    <div class="header-placeholder"></div>
-                    <div role="main">
 
-                        <div class="container">
-                            <div class="row">
-                                <div id="id_botchathistory" class="columns large-9 medium-9 small-10 chat-area">
-                                	<div class="bot-wrapper animated pulse"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot">Hello, I'm a bot and my name is Smart Move. I hope you're well today. Looking for a new home? Perhaps I can help. What area are you interested in?</div>
+                    <!-- Text Input Area -->
+                    <div class="row">
+                        <div class="columns border large-9 medium-12 small-12 small-centered row-fixed">
 
-                                    <ul class="btn-options hide">
-                                        <li>Option 1</li>
-                                        <li>Option 2</li>
-                                        <li>Option 3</li>
-                                    </ul>
+                            <!-- Upload-->
+                            <button class="button upload" type="button" data-toggle="example-dropdown-1">+</button>
+                            <div class="dropdown-pane top" id="example-dropdown-1" data-dropdown data-hover="true" data-hover-pane="true">
+                                <ul class="sm-add">
+                                    <li><span>New...</span></li>
+                                    <li><i class="fa fa-google" aria-hidden="true"></i>Google Docs file</li>
+                                    <li><i class="fa fa-file-text-o" aria-hidden="true"></i>Post</li>
+                                </ul>
 
-                                    <div id="owl-example" class="owl-carousel hide">
-                                        <div class="card animated bounceIn">
-                                            <img src="http://www.whitestrailers.com/bot/img/house-1.png">
-                                            <ul class="card-content">
-                                                <li class="house-type"><strong>Detached House | 2 Beds | 2 Baths</strong></li>
-                                                <li class="house-desc">16 Forest View, Raheny, Dublin 5</li>
-                                                <li class="house-price"><small>€295,000</small></li>
-                                            </ul>
-                                            <a href="#"><div class="house-btn">VIEW</div></a>
-                                        </div>
-                                        <div class="card animated bounceIn">
-                                            <img src="http://www.whitestrailers.com/bot/img/house-2.png">
-                                            <ul class="card-content">
-                                                <li class="house-type"><strong>Detached House | 3 Beds | 3 Baths</strong></li>
-                                                <li class="house-desc">24 Cherry LaneRaheny, Dublin 5</li>
-                                                <li class="house-price"><small>€280,000</small></li>
-                                            </ul>
-                                            <a href="#"><div class="house-btn">VIEW</div></a>
-                                        </div>
-                                        <div class="card animated bounceIn">
-                                            <img src="http://www.whitestrailers.com/bot/img/house-3.png">
-                                            <ul class="card-content">
-                                                <li class="house-type"><strong>Detached House | 3 Beds | 3 Baths</strong></li>
-                                                <li class="house-desc">11 Wood Avenue, Raheny, Dublin 5</li>
-                                                <li class="house-price"><small>€280,000</small></li>
-                                            </ul>
-                                            <a href="#"><div class="house-btn">VIEW</div></a>
-                                        </div>
-
-                                    </div>
-
-
-
-                                </div>
-                                <div class="columns large-3 medium-3 small-10 right-callout">
-                                    <img class="text-center animated slideInDown" src="http://www.whitestrailers.com/bot/img/bot-profile.png" alt="Bot Profile Image">
-
-                                    <p class="text-center animation-time-2 animated fadeIn"><span class="bot-name">Smart Move</span><br><span class="bot-job lobster">Property Bot</span></p>
-                                    <p class="text-center animation-time-2 animated fadeIn">The danger of the past was that men became slaves. The danger of the future is that <strong>men may become robots</strong>.</p>
-
-                                    <a class="centered btn-callout animated fadeIn">Mortgage Calculator</a>
-                                </div>
+                                <ul class="sm-add">
+                                    <li><span>Import a file from...</span></li>
+                                    <li><i class="fa fa-google" aria-hidden="true"></i> Google Drive</li>
+                                    <li><i class="fa fa-laptop" aria-hidden="true"></i>Your Computer</li>
+                                </ul>
                             </div>
-                            <div class="row">
-                                <div class="columns border large-9 medium-9 small-12 small-centered row-fixed">
-                                    <a href="#"><img alt="Simley" class="fake-btn" src="http://www.whitestrailers.com/bot/img/fake-btns.png"></a>
-                                    <a href="" class="rnd-btn" onclick="javascript:onChatClick(event)">+</a>
-                                    <input id="id_chattext" class="chat-input" type="search" placeholder="Ask Smart Move a question..." autofocus/>
+                            <!-- / upload -->
 
 
-                                </div>
-                            </div>
-                        </div><!-- /.container -->
-                    </div><!-- /.main -->
+                            <input id="id_chattext" class="chat-input speech-input"  type="search" placeholder="Ask Smart Move a question..." />
 
+                        </div>
+                    </div><!-- Text Input Area -->
+
+                </div><!-- / Main -->
+            </div><!-- / Blurs Background -->
+        </div><!-- /.container -->
+
+
+        <script src="http://www.whitestrailers.com/bot/js/vendor/what-input.js"></script>
+        <script src="http://www.whitestrailers.com/bot/js/vendor/owl.carousel.min.js"></script>
+
+        <script src="http://www.whitestrailers.com/bot/js/vendor/foundation.min.js"></script>
+        <script src="js/vendor/emojione.js"></script>
+        <script src="js/vendor/emojionearea.js"></script>
+        <script>
+            $(document).ready(function () {
+                
                     
-                    
-                    <script src="http://www.whitestrailers.com/bot/js/vendor/smooth-scroll.js"></script>
-                    <script src="http://www.whitestrailers.com/bot/js/vendor/owl.carousel.min.js"></script>
-                    <script src="http://www.whitestrailers.com/bot/js/vendor/what-input.js"></script>
-                    <script src="http://www.whitestrailers.com/bot/js/vendor/foundation.min.js"></script>
-
-                    <script type="text/javascript">
-
-
-                                        $(document).ready(function () {
-                                            smoothScroll.init();
-
-                                            $("#owl-example").owlCarousel({
-                                                // Most important owl features
-                                                items: 4,
-                                                itemsCustom: false,
-                                                itemsDesktop: [1000, 1],
-                                                itemsDesktopSmall: [980, 3],
-                                                itemsTablet: [768, 2],
-                                                itemsTabletSmall: false,
-                                                itemsMobile: [479, 1],
-                                                singleItem: false,
-                                                itemsScaleUp: false,
-                                                //Basic Speeds
-                                                slideSpeed: 200,
-                                                paginationSpeed: 800,
-                                                rewindSpeed: 1000,
-                                                //Autoplay
-                                                autoPlay: false,
-                                                stopOnHover: false,
-                                                // Navigation
-                                                navigation: false,
-                                                navigationText: ["prev", "next"],
-                                                rewindNav: true,
-                                                scrollPerPage: false,
-                                                //Pagination
-                                                pagination: true,
-                                                paginationNumbers: false,
-                                                // Responsive 
-                                                responsive: true,
-                                                responsiveRefreshRate: 200,
-                                                responsiveBaseWidth: window,
-                                                // CSS Styles
-                                                baseClass: "owl-carousel",
-                                                theme: "owl-theme",
-                                                //Lazy load
-                                                lazyLoad: false,
-                                                lazyFollow: true,
-                                                lazyEffect: "fade",
-                                                //Auto height
-                                                autoHeight: false,
-                                                //JSON 
-                                                jsonPath: false,
-                                                jsonSuccess: false,
-                                                //Mouse Events
-                                                dragBeforeAnimFinish: true,
-                                                mouseDrag: true,
-                                                touchDrag: true,
-                                                //Transitions
-                                                transitionStyle: false,
-                                                // Other
-                                                addClassActive: false,
-                                                //Callbacks
-                                                beforeUpdate: false,
-                                                afterUpdate: false,
-                                                beforeInit: false,
-                                                afterInit: false,
-                                                beforeMove: false,
-                                                afterMove: false,
-                                                afterAction: false,
-                                                startDragging: false,
-                                                afterLazyLoad: false
-
-                                            });
+                $("#id_chattext").emojioneArea({
+                    events: {
+                        keyup: function (editor, event) {
+                            // catches everything but enter
+                            
+                            if (event.which === 13) {
+                                onChatClick(event);
+                                $('.emojionearea-editor').empty();
+                            }
+                        }
+                    }
+                });
+                $("#id_chattext").data("emojioneArea").editor.focus();
+            });
+        </script>
+        <script> $(document).foundation();</script>
 
 
-                                            javascriptCheck();
-                                            $('#id_contextdump').hide();
-                                            $('#id_chattext').bind("enterKey", function (e) {
-                                                onChatClick(event);
-                                            });
-                                            $('#id_chattext').keyup(function (e) {
-                                                if (e.keyCode == 13) {
-                                                    $(this).trigger("enterKey");
-                                                }
-                                            });
 
-                                            botInUse = 'Bot';
-                                        });
+        <script type="text/javascript">
 
-                                        function twitterOK(response) {
-                                            console.log(response);
-                                        }
+            Pace.on("start", function () {
+                $(".loading-bg").show();
+            });
 
-                                        function twitterNotOK() {
-                                            chat('Error', 'Error whilst attempting to talk to Bot');
-                                        }
+            Pace.on("done", function () {
+                $(".loading-bg").hide();
+                $('.blur').removeClass('on');
+                $(".fadeIn, .rubberBand").addClass("animated");
+                $('.sm-logo').fadeIn().css('display', 'block').addClass('slideInDown');
+                $('.logo').delay(500).fadeIn();
 
-                                        // if javascript is enabled on the browser then can
-                                        // remove the warning message
-                                        function javascriptCheck() {
-                                            $('#no-script').remove();
-                                        }
+            });
 
-                                        function createNewDiv(who, message) {
 
-                                        	var text = ""
-				                        	if (message instanceof Array) {
-				                        		for (var i = 0; i < message.length; i++) {
-				                        			text += ' ' + message[i];
-				                        		};
-				                        	} else {
-				                        		text = message;
-				                        	}
 
-                                            if (who === 'Bot') {
-                                                // function botDelay() {
-                                                    return '<div class="bot-wrapper animated pulse"><img class="bot-pic" src="http://www.whitestrailers.com/bot/img/bot-pic.png"><div class="bot">' + text + '</div>';
-                                                // }
-                                                // return setTimeout(botDelay, 2000);
-                                            } else {
-                                                return '<div class="human-wrapper animated pulse"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human">' + text + '</div>';
-                                            }
-                                        }
+            //$(document).foundation();
+            $(document).ready(function () {
 
-                                        function chat(person, txt) {
-                                            $('#id_botchathistory').append(createNewDiv(person, txt));
-                                        }
 
-                                        function processOK(response) {
-                                            console.log(response);
 
-                                            var houses = false;
-                                            for (var i=0; i<response.length; i++) {
-                                            	if (response[i].indexOf('found the following properties') !== -1) {
-                                            		houses = true;
-                                            		//response = response.splice(0,3).push(response.splice(6,2));
-                                            	}
-                                            }
+                // When search modal is open foucs on input
+                $('#search').on('open.zf.reveal', function () {
+                    $('.input-search').focus();
+                    $('.search-btn').removeClass('fa-search').addClass('x');
+                });
+                
+                $('#search').on('closed.zf.reveal', function () {
+                
+                    $('.search-btn').addClass('fa-search').removeClass('x');
+                });
+                
+                
 
-                                            if (houses) {
-                                                $('#owl-example').show();
-                                                chat('Bot', response);
-                                            } else {
-                                                $('#owl-example').hide();
-                                                chat('Bot', response);
-                                            }
+                
 
-                                            if (response[0].indexOf('I can look on social media') !== -1) {
-                                            	$.get( "https://jornodered.mybluemix.net/tweets", function( data ) {
-                                            		var txt = "";
-                                            		if (data.rows[1].ave < 0) {
-                                            			txt = 'Based on social media, this area has below average sentiment rating';
-                                            		} else {
-                                            			if (data.rows[1].ave < 4) {
-                                            				txt = 'Based on social media, this area has good sentiment rating (sentiment score: ' + data.rows[1].ave + ')';
-                                            			} else {
-                                            				txt = 'Based on social media, this area has excellemt sentiment rating';
-                                            			}
-                                            		}
-                                            		chat('Bot', txt);
-                                            	});
 
-                                            }
 
-                                            if (response[0].indexOf('wake up Chatty') !== -1) {
-                                            	botInUse = 'Chatty';
-                                            	chat('Bot', "Hi, I'm Chatty the chatbot, waht's your name?");	
-                                            }
-                                            
-                                            if(botInUse === 'Chatty') {
-                                                $('.chat-area').addClass('ducks');
-                                                $('.right-callout').addClass('lego');
-                                                $('.bot-name').html('Chatty :)');
-                                            }
 
-                                            // $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
+//
+//                $("#id_chattext").emojioneArea({
+//                    
+//                    events: {
+//                        keyup: function (editor, event) {
+//                            // catches everything but enter
+//                            
+//                            if (event.which === 13) {
+//                                onChatClick(event);
+//                                $('.emojionearea-editor').empty();
+//                            }
+//                        }
+//                    },
+//                    focus: function (editor, event) {
+//                        alert('Hey');
+//                    }
+//                });
+////                
 
-                                            var objDiv = $('#id_botchathistory');
-                                            if (objDiv.length > 0) {
-                                                objDiv[0].scrollTop = objDiv[0].scrollHeight;
-                                            }
-                                        }
 
-                                        function processNotOK() {
-                                            chat('Error', 'Error whilst attempting to talk to Bot');
-                                        }
 
-                                        function invokeAjax(message) {
-                                            var contextdata = $('#id_contextdump').data('convContext');
-                                            console.log('checking stashed context data');
-                                            console.log(contextdata);
-                                            //var ajaxData = "msgdata=" + message;
-                                            var ajaxData = {};
-                                            ajaxData.msgdata = message;
-                                            if (contextdata) {
-                                                ajaxData.context = contextdata;
-                                            }
 
-                                            if (botInUse === 'Bot') {
-	                                            $.ajax({
-	                                                type: 'POST',
-	                                                url: 'botchat',
-	                                                data: ajaxData,
-	                                                success: processOK,
-	                                                error: processNotOK
-	                                            });                                            	
-                                            } else {
-	                                            $.ajax({
-	                                                type: 'POST',
-	                                                url: 'kidchat',
-	                                                data: ajaxData,
-	                                                success: processOK,
-	                                                error: processNotOK
-	                                            });	
-                                            }
-                                        }
 
-                                        // User has entered some text.
-                                        function onChatClick(e) {
-                                            e.preventDefault();
-                                            var txt = $('#id_chattext').val();
-                                            chat('You', txt);
-                                            invokeAjax(txt);
-                                            $('#id_chattext').val('');
-                                        }
 
-                    </script>
 
-                    </body>
-                    </html>
+
+                var toggles = document.querySelectorAll(".c-hamburger");
+
+                for (var i = toggles.length - 1; i >= 0; i--) {
+                    var toggle = toggles[i];
+                    toggleHandler(toggle);
+                }
+                ;
+
+                function toggleHandler(toggle) {
+                    toggle.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+                    });
+                }
+
+
+                javascriptCheck();
+                $('#id_contextdump').hide();
+                $('#id_chattext').bind("enterKey", function (e) {
+                    onChatClick(event);
+                });
+                $('#id_chattext').keyup(function (e) {
+                    if (e.keyCode === 13) {
+                        $(this).trigger("enterKey");
+                    }
+                });
+                botInUse = 'Bot';
+            });
+            
+            $('.menu-btn').on('click', function(){
+                
+                if($(this).hasClass('off')){
+                    $(this).removeClass('off').addClass('on');
+                    $('.target').text('Menu');
+                } else {
+                    $(this).removeClass('on').addClass('off');
+                    $('.target').text('Chat');
+                }
+                
+                
+            });
+            
+            
+
+
+
+
+
+            function twitterOK(response) {
+                console.log(response);
+            }
+
+            function twitterNotOK() {
+                chat('Error', 'Error whilst attempting to talk to Bot');
+            }
+            var d = new Date();
+            var time = d.getHours() + ":" + d.getMinutes();
+
+            // if javascript is enabled on the browser then can
+            // remove the warning message
+            function javascriptCheck() {
+                $('#no-script').remove();
+            }
+
+            function createNewDiv(who, message, houses) {
+
+                if (houses) {
+                    return '<div id="owl-example" class="owl-carousel">' +
+                            '<div class="card animated bounceIn">' +
+                            '<img src="http://www.whitestrailers.com/bot/img/house-1.png">' +
+                            '<ul class="card-content">' +
+                            '<li class="house-type"><strong>Detached House | 2 Beds | 2 Baths</strong></li>' +
+                            '<li class="house-desc">16 Forest View, Raheny, Dublin 5</li>' +
+                            '<li class="house-price"><small>€295,000</small></li>' +
+                            '</ul>' +
+                            '<a href="#"><div class="house-btn">VIEW</div></a>' +
+                            '</div>' +
+                            '<div class="card animated bounceIn">' +
+                            '<img src="http://www.whitestrailers.com/bot/img/house-2.png">' +
+                            '<ul class="card-content">' +
+                            '<li class="house-type"><strong>Detached House | 3 Beds | 3 Baths</strong></li>' +
+                            '<li class="house-desc">24 Cherry LaneRaheny, Dublin 5</li>' +
+                            '<li class="house-price"><small>€280,000</small></li>' +
+                            '</ul>' +
+                            '<a href="#"><div class="house-btn">VIEW</div></a>' +
+                            '</div>' +
+                            '<div class="card animated bounceIn">' +
+                            '<img src="http://www.whitestrailers.com/bot/img/house-3.png">' +
+                            '<ul class="card-content">' +
+                            '<li class="house-type"><strong>Detached House | 3 Beds | 3 Baths</strong></li>' +
+                            '<li class="house-desc">11 Wood Avenue, Raheny, Dublin 5</li>' +
+                            '<li class="house-price"><small>€280,000</small></li>' +
+                            '</ul><a href="#"><div class="house-btn">VIEW</div></a>' +
+                            '</div>' +
+                            '</div>';
+                } else {
+                    var text = "";
+                    if (message instanceof Array) {
+                        for (var i = 0; i < message.length; i++) {
+                            text += ' ' + message[i];
+                        }
+                        ;
+                    } else {
+                        text = message;
+                    }
+
+                    if (who === 'Bot') {
+                        // function botDelay() {
+                        return '<div class="bot-wrapper animated pulse"><img class="bot-pic" src="img/bot-pic.png"><div class="bot">' + text + '</div>';
+                        // }
+                        // return setTimeout(botDelay, 2000);
+                    } else {
+                        return '<div class="human-wrapper animated pulse"><img class="human-pic" src="http://www.whitestrailers.com/bot/img/human-pic.png"><div class="human">' + text + '<div class="time">' + time + '   <i class="fa fa-check" aria-hidden="true"></i></div></div>';
+                    }
+                }
+            }
+
+            function chat(person, txt, houses) {
+                $('#id_botchathistory').append(createNewDiv(person, txt, houses));
+            }
+
+            function processOK(response) {
+                // console.log(response);
+
+                var houses = false;
+                var msg = '';
+                for (var i = 0; i < response.length; i++) {
+                    console.log(response[i]);
+                    console.log(response[i].indexOf('found the following properties'));
+                    if (response[i].indexOf('found the following properties') !== -1) {
+                        houses = true;
+                        if (houses) {
+                            msg = response[7];
+                            // response = response.splice(0,3).concat(response.splice(6,7));
+                            break;
+                        }
+                    }
+                }
+                if (houses) {
+                    chat('Bot', response.splice(0, 3));
+                    chat('Bot', undefined, houses);
+                    $('#owl-example').attr('style', 'display: block !important');
+
+                    $("#owl-example").owlCarousel({
+                        // Most important owl features
+                        items: 4,
+                        itemsCustom: false,
+                        itemsDesktop: [1000, 1],
+                        itemsDesktopSmall: [980, 3],
+                        itemsTablet: [768, 2],
+                        itemsTabletSmall: false,
+                        itemsMobile: [479, 1],
+                        singleItem: false,
+                        itemsScaleUp: false,
+                        //Basic Speeds
+                        slideSpeed: 200,
+                        paginationSpeed: 800,
+                        rewindSpeed: 1000,
+                        //Autoplay
+                        autoPlay: false,
+                        stopOnHover: false,
+                        // Navigation
+                        navigation: false,
+                        navigationText: ["prev", "next"],
+                        rewindNav: true,
+                        scrollPerPage: false,
+                        //Pagination
+                        pagination: true,
+                        paginationNumbers: false,
+                        // Responsive 
+                        responsive: true,
+                        responsiveRefreshRate: 200,
+                        responsiveBaseWidth: window,
+                        // CSS Styles
+                        baseClass: "owl-carousel",
+                        theme: "owl-theme",
+                        //Lazy load
+                        lazyLoad: false,
+                        lazyFollow: true,
+                        lazyEffect: "fade",
+                        //Auto height
+                        autoHeight: false,
+                        //JSON 
+                        jsonPath: false,
+                        jsonSuccess: false,
+                        //Mouse Events
+                        dragBeforeAnimFinish: true,
+                        mouseDrag: true,
+                        touchDrag: true,
+                        //Transitions
+                        transitionStyle: false,
+                        // Other
+                        addClassActive: false,
+                        //Callbacks
+                        beforeUpdate: false,
+                        afterUpdate: false,
+                        beforeInit: false,
+                        afterInit: false,
+                        beforeMove: false,
+                        afterMove: false,
+                        afterAction: false,
+                        startDragging: false,
+                        afterLazyLoad: false
+
+                    });
+
+                    chat('Bot', msg);
+                } else {
+                    // $('#owl-example').hide();
+                    chat('Bot', response);
+                }
+
+                if (response[0].indexOf('I can look on social media') !== -1) {
+                    $.get("https://jornodered.mybluemix.net/tweets", function (data) {
+                        var txt = "";
+                        if (data.rows[1].ave < 0) {
+                            txt = 'Based on social media, this area has below average sentiment rating';
+                        } else {
+                            if (data.rows[1].ave < 4) {
+                                txt = 'Based on social media, this area has good sentiment rating (sentiment score: ' + data.rows[1].ave + ')';
+                            } else {
+                                txt = 'Based on social media, this area has excellemt sentiment rating';
+                            }
+                        }
+                        chat('Bot', txt);
+                    });
+
+                }
+
+                if (response[0].indexOf('wake up Chatty') !== -1) {
+                    botInUse = 'Chatty';
+                    //$("#id_chattext").attr("placeholder", "Ask Chatty a question...").val("").focus();
+                    chat('Bot', "Hi, I'm Chatty the chatbot");
+                }
+
+                if (botInUse === 'Chatty') {
+                    $('.chat-area').addClass('ducks');
+                    $('.right-callout').addClass('lego');
+                    $('.bot-name').html('Chatty :)');
+                }
+
+                // $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
+
+                var objDiv = $('#id_botchathistory');
+                if (objDiv.length > 0) {
+                    objDiv[0].scrollTop = objDiv[0].scrollHeight;
+                }
+            }
+
+            function processNotOK() {
+                chat('Error', 'Error whilst attempting to talk to Bot');
+            }
+
+            function invokeAjax(message) {
+                var contextdata = $('#id_contextdump').data('convContext');
+                console.log('checking stashed context data');
+                console.log(contextdata);
+                //var ajaxData = "msgdata=" + message;
+                var ajaxData = {};
+                ajaxData.msgdata = message;
+                if (contextdata) {
+                    ajaxData.context = contextdata;
+                }
+
+                if (botInUse === 'Bot') {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'botchat',
+                        data: ajaxData,
+                        success: processOK,
+                        error: processNotOK
+                    });
+                } else {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'kidchat',
+                        data: ajaxData,
+                        success: processOK,
+                        error: processNotOK
+                    });
+                }
+            }
+
+            // User has entered some text.
+            function onChatClick(e) {
+                e.preventDefault();
+                var txt = $('.emojionearea-editor').html();
+                chat('You', txt);
+                invokeAjax(txt);
+                //$('.chat-input').text('');
+
+                setTimeout(function () {
+                    $('.fa-check').addClass('fa-seen');
+                }, 2000);
+
+
+
+
+
+            }
+
+        </script>
+        <script>
+            /*global webkitSpeechRecognition */
+
+            (function () {
+                'use strict';
+
+                // check for support (webkit only)
+                if (!('webkitSpeechRecognition' in window))
+                    return;
+
+                var talkMsg = 'start talking';
+
+                // seconds to wait for more input after last
+                var patience = 6;
+
+                function capitalize(str) {
+                    return str.length ? str[0].toUpperCase() + str.slice(1) : str;
+                }
+
+                var inputEls = document.getElementsByClassName('speech-input');
+
+                [].forEach.call(inputEls, function (inputEl) {
+                    // create wrapper
+                    var wrapper = document.createElement('div');
+                    wrapper.classList.add('si-wrapper');
+
+                    // create mic button
+                    var micBtn = document.createElement('button');
+                    micBtn.classList.add('mic-btn');
+                    micBtn.classList.add('off');
+                    micBtn.classList.add('fa');
+                    //micBtn.classList.add('show-for-large-only');
+                    micBtn.classList.add('fa-microphone');
+                    micBtn.textContent = '';
+                    var micIcon = document.createElement('span');
+                    var holderIcon = document.createElement('span');
+                    micIcon.classList.add('si-mic');
+                    holderIcon.classList.add('si-holder');
+                    micBtn.appendChild(micIcon);
+                    micBtn.appendChild(holderIcon);
+
+                    // gather inputEl data
+                    var nextNode = inputEl.nextSibling;
+                    var parent = inputEl.parentNode;
+                    var inputHeight = inputEl.offsetHeight;
+                    var inputRightBorder = parseInt(getComputedStyle(inputEl).borderRightWidth, 10);
+                    var buttonSize = 0.8 * inputHeight;
+                    // Size bounds (useful for textareas).
+                    if (buttonSize > 26)
+                        buttonSize = 26;
+
+                    // append mic and input to wrapper
+                    wrapper.appendChild(parent.removeChild(inputEl));
+                    wrapper.appendChild(micBtn);
+
+                    // size and position mic and input
+                    micBtn.style.top = 0.1 * inputHeight + 'px';
+                    micBtn.style.height = micBtn.style.width = buttonSize + 'px';
+                    inputEl.style.paddingRight = buttonSize - inputRightBorder + 'px';
+
+                    // append wrapper where input was
+                    parent.insertBefore(wrapper, nextNode);
+
+                    // setup recognition
+                    var finalTranscript = '';
+                    var recognizing = false;
+                    var timeout;
+                    var oldPlaceholder = null;
+                    var recognition = new webkitSpeechRecognition();
+                    recognition.continuous = true;
+
+                    function restartTimer() {
+                        timeout = setTimeout(function () {
+                            recognition.stop();
+                        }, patience * 1000);
+                    }
+
+                    recognition.onstart = function () {
+                        oldPlaceholder = inputEl.placeholder;
+                        inputEl.placeholder = talkMsg;
+                        recognizing = true;
+                        micBtn.classList.add('listening');
+                        restartTimer();
+                    };
+
+                    recognition.onend = function () {
+                        recognizing = false;
+                        clearTimeout(timeout);
+                        micBtn.classList.remove('listening');
+                        if (oldPlaceholder !== null)
+                            inputEl.placeholder = oldPlaceholder;
+                    };
+
+                    recognition.onresult = function (event) {
+                        clearTimeout(timeout);
+                        for (var i = event.resultIndex; i < event.results.length; ++i) {
+                            if (event.results[i].isFinal) {
+                                finalTranscript += event.results[i][0].transcript;
+                            }
+                        }
+                        finalTranscript = capitalize(finalTranscript);
+                        inputEl.value = finalTranscript;
+                        restartTimer();
+                    };
+
+                    micBtn.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        
+                        var counter = 0;
+                    var countInt = setInterval(function () {
+                        ++counter;
+                        $('.counter').text(counter);
+                    }, 1000);
+
+                    if ($(this).hasClass('off')) {
+                        $(this).addClass('color-me-red animated pulse');
+                        $('.mic-in-use').removeClass('hide').fadeIn();
+                        countInt;
+                        micBtn.classList.add('on');
+                        micBtn.classList.remove('off');
+                    } else if($(this).hasClass('on')){
+                        //window.clearInterval(countInt);
+                        $(this).removeClass('color-me-red animated pulse');
+                        $('.mic-in-use').addClass('hide').fadeOut();
+                        $('this').removeClass('on').addClass('off');
+                        
+                    } 
+                        
+                        
+                        
+                        if (recognizing) {
+                            recognition.stop();
+                            return;
+                        }
+                        inputEl.value = finalTranscript = '';
+                        recognition.start();
+                    }, false);
+                });
+            })();
+
+
+
+
+
+        </script>
+    </body>
+</html>
