@@ -69,11 +69,11 @@
             </button>
         </div>
         <!-- / Modal ~ Menu -->
-        
+
         <!-- Modal ~ Team -->
         <div class="reveal" data-animation-in="slide-in-down" data-animation-out="slide-out-up" id="team" data-reveal>
             <div class="team-pic">
-            <img src="http://www.whitestrailers.com/bot/img/team.jpg" alt="The AIB Watson Team Burning the midnight oil">
+                <img src="http://www.whitestrailers.com/bot/img/team.jpg" alt="The AIB Watson Team Burning the midnight oil">
             </div>
             <h1><span>Meet The Team</span></h1>
             <div class="members">
@@ -116,7 +116,7 @@
                     <p>BPM</p>
                 </div>
             </div>
-            
+
             <div class="members">
                 <div class="pic"></div>
                 <div class="person">
@@ -179,14 +179,30 @@
                                 <div class="mic-in-use hide">
                                     <i class="fa fa-microphone" aria-hidden="true"></i>Microphone in use  <span class="timer"><span class="counter">0</span> secs</span>
                                 </div>
+                                <div class="chatty-off">
+                                    <p>Change Bot</p>
+                                    <div class="switch large">
+                                        <input class="switch-input" id="yes-no" type="checkbox" name="exampleSwitch">
+                                        <label class="switch-paddle" for="yes-no">
+                                            <span class="show-for-sr">Do you like me?</span>
+                                            <span class="switch-active" aria-hidden="true">Yes</span>
+                                            <span class="switch-inactive" aria-hidden="true">No</span>
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
+
+
+
+
+
 
                             <ul class="btn-options hide">
                                 <li>Option 1</li>
                                 <li>Option 2</li>
                                 <li>Option 3</li>
                             </ul>
-                            
+
 
                         </div>
                         <!-- / Chat Area -->
@@ -242,13 +258,13 @@
         <script src="http://www.whitestrailers.com/bot/js/vendor/emojionearea.js"></script>
         <script>
             $(document).ready(function () {
-                
-                    
+
+
                 $("#id_chattext").emojioneArea({
                     events: {
                         keyup: function (editor, event) {
                             // catches everything but enter
-                            
+
                             if (event.which === 13) {
                                 onChatClick(event);
                                 $('.emojionearea-editor').empty();
@@ -290,15 +306,15 @@
                     $('.input-search').focus();
                     $('.search-btn').removeClass('fa-search').addClass('x');
                 });
-                
+
                 $('#search').on('closed.zf.reveal', function () {
-                
+
                     $('.search-btn').addClass('fa-search').removeClass('x');
                 });
-                
-                
 
-                
+
+
+
 
 
 
@@ -334,9 +350,10 @@
                 for (var i = toggles.length - 1; i >= 0; i--) {
                     var toggle = toggles[i];
                     toggleHandler(toggle);
-                };
-                
-                
+                }
+                ;
+
+
 
                 function toggleHandler(toggle) {
                     toggle.addEventListener("click", function (e) {
@@ -344,10 +361,10 @@
                         (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
                     });
                 }
-                
-                 $("#menu").on('closed.zf.reveal', function () {
-                
-                    if($('.c-hamburger').hasClass('is-active')){
+
+                $("#menu").on('closed.zf.reveal', function () {
+
+                    if ($('.c-hamburger').hasClass('is-active')) {
                         $('.c-hamburger').removeClass('is-active');
                         $('.target').text('Chat');
                     }
@@ -366,21 +383,21 @@
                 });
                 botInUse = 'Bot';
             });
-            
-            $('.menu-btn').on('click', function(){
-                
-                if($(this).hasClass('off')){
+
+            $('.menu-btn').on('click', function () {
+
+                if ($(this).hasClass('off')) {
                     $(this).removeClass('off').addClass('on');
                     $('.target').text('Menu');
                 } else {
                     $(this).removeClass('on').addClass('off');
                     $('.target').text('Chat');
                 }
-                
-                
+
+
             });
-            
-            
+
+
 
 
 
@@ -588,16 +605,27 @@
                     //$("#id_chattext").attr("placeholder", "Ask Chatty a question...").val("").focus();
                     chat('Bot', "Hi, I'm Chatty the chatbot");
                     $('#kid').foundation('open');
+                    $('.switch').removeClass('hide').fadeIn();
                 }
 
                 if (botInUse === 'Chatty') {
                     $('.chat-area').addClass('ducks');
                     $('.right-callout').addClass('lego');
                     $('.bot-name').html('Chatty :)');
-                    $('.sm-logo').attr('src','http://www.whitestrailers.com/bot/img/chatty-pic.png');
-                    $('.bot-pic').attr('src','http://www.whitestrailers.com/bot/img/chat-pic.png');
-                    
+                    $('.sm-logo').attr('src', 'http://www.whitestrailers.com/bot/img/chatty-pic.png');
+                    $('.bot-pic').attr('src', 'http://www.whitestrailers.com/bot/img/chat-pic.png');
+
                 }
+                
+                
+                $('.switch').on('click', function(){
+                    $('.chat-area').removeClass('ducks');
+                    $('.right-callout').removeClass('lego');
+                    $('.bot-name').html('Smart<strong>Move</span>');
+                    $('.sm-logo').attr('src', 'http://www.whitestrailers.com/bot/img/sm-logo-white.svg');
+                    $('.bot-pic').attr('src', 'http://www.whitestrailers.com/bot/img/bot-pic.png');
+                    $('.switch').addClass('hide');
+                });
 
                 // $('#id_contextdump').data('convContext', response.botresponse.messageout.context);
 
@@ -761,29 +789,29 @@
 
                     micBtn.addEventListener('click', function (event) {
                         event.preventDefault();
-                        
-                        var counter = 0;
-                    var countInt = setInterval(function () {
-                        ++counter;
-                        $('.counter').text(counter);
-                    }, 1000);
 
-                    if ($(this).hasClass('off')) {
-                        $(this).addClass('color-me-red animated pulse');
-                        $('.mic-in-use').removeClass('hide').fadeIn();
-                        countInt;
-                        micBtn.classList.add('on');
-                        micBtn.classList.remove('off');
-                    } else if($(this).hasClass('on')){
-                        //window.clearInterval(countInt);
-                        $(this).removeClass('color-me-red animated pulse');
-                        $('.mic-in-use').addClass('hide').fadeOut();
-                        $('this').removeClass('on').addClass('off');
-                        
-                    } 
-                        
-                        
-                        
+                        var counter = 0;
+                        var countInt = setInterval(function () {
+                            ++counter;
+                            $('.counter').text(counter);
+                        }, 1000);
+
+                        if ($(this).hasClass('off')) {
+                            $(this).addClass('color-me-red animated pulse');
+                            $('.mic-in-use').removeClass('hide').fadeIn();
+                            countInt;
+                            micBtn.classList.add('on');
+                            micBtn.classList.remove('off');
+                        } else if ($(this).hasClass('on')) {
+                            //window.clearInterval(countInt);
+                            $(this).removeClass('color-me-red animated pulse');
+                            $('.mic-in-use').addClass('hide').fadeOut();
+                            $('this').removeClass('on').addClass('off');
+
+                        }
+
+
+
                         if (recognizing) {
                             recognition.stop();
                             return;
