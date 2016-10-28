@@ -179,12 +179,12 @@
                                 <div class="mic-in-use hide">
                                     <i class="fa fa-microphone" aria-hidden="true"></i>Microphone in use  <span class="timer"><span class="counter">0</span> secs</span>
                                 </div>
-                                <div class="chatty-off hide">
+                                <div class="chatty-off">
                                     <p>Change Bot</p>
-                                    <div class="switch large">
+                                    <div class="switch tiny">
                                         <input class="switch-input" id="yes-no" type="checkbox" name="exampleSwitch">
                                         <label class="switch-paddle" for="yes-no">
-                                            <span class="show-for-sr">Do you like me?</span>
+                                            <!-- <span class="show-for-sr">Do you like me?</span> -->
                                             <span class="switch-active" aria-hidden="true">Yes</span>
                                             <span class="switch-inactive" aria-hidden="true">No</span>
                                         </label>
@@ -308,52 +308,15 @@
                 });
 
                 $('#search').on('closed.zf.reveal', function () {
-
                     $('.search-btn').addClass('fa-search').removeClass('x');
                 });
-
-
-
-
-
-
-
-
-//
-//                $("#id_chattext").emojioneArea({
-//                    
-//                    events: {
-//                        keyup: function (editor, event) {
-//                            // catches everything but enter
-//                            
-//                            if (event.which === 13) {
-//                                onChatClick(event);
-//                                $('.emojionearea-editor').empty();
-//                            }
-//                        }
-//                    },
-//                    focus: function (editor, event) {
-//                        alert('Hey');
-//                    }
-//                });
-////                
-
-
-
-
-
-
-
 
                 var toggles = document.querySelectorAll(".c-hamburger");
 
                 for (var i = toggles.length - 1; i >= 0; i--) {
                     var toggle = toggles[i];
                     toggleHandler(toggle);
-                }
-                ;
-
-
+                };
 
                 function toggleHandler(toggle) {
                     toggle.addEventListener("click", function (e) {
@@ -363,7 +326,6 @@
                 }
 
                 $("#menu").on('closed.zf.reveal', function () {
-
                     if ($('.c-hamburger').hasClass('is-active')) {
                         $('.c-hamburger').removeClass('is-active');
                         $('.target').text('Chat');
@@ -385,7 +347,6 @@
             });
 
             $('.menu-btn').on('click', function () {
-
                 if ($(this).hasClass('off')) {
                     $(this).removeClass('off').addClass('on');
                     $('.target').text('Menu');
@@ -393,15 +354,7 @@
                     $(this).removeClass('on').addClass('off');
                     $('.target').text('Chat');
                 }
-
-
             });
-
-
-
-
-
-
 
             function twitterOK(response) {
                 console.log(response);
