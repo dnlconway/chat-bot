@@ -1614,6 +1614,13 @@ img.menu-logo {
     color: #bbbbbb;
 }
 
+.owl-wrapper-outer {
+    padding: 40px 0;
+}
+
+.owl-item {
+    width: 330px !important;
+}
 
 @media screen and (max-width: 420px) {
   .chat-input {
