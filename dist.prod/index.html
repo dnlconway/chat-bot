@@ -79,43 +79,44 @@
             <div class="members">
                 <div class="pic"></div>
                 <div class="person">
-                    <h3>Pierce</h3>
-                    <p>UI/UX Designer</p>
+                    <h3>Cathal Warfield</h3>
+                    <p>Manager</p>
+                    <p>Channel Development</p>
+                </div>
+            </div>
+            <div class="members">
+                <div class="pic"></div>
+                <div class="person">
+                    <h3>Andy O'Sullivan</h3>
+                    <p>Specialist Software Engineer</p>
+                    <p>Digital Innovation</p>
+                </div>
+            </div>
+            <div class="members">
+                <div class="pic"></div>
+                <div class="person">
+                    <h3>Philip Kinlen</h3>
+                    <p>Data Innovation</p>
+                    <p>Digital Innovation</p>
+                </div>
+            </div>
+            <div class="members">
+                <div class="pic"></div>
+                <div class="person">
+                    <h3>Donal Conway</h3>
+                    <p>Software Engineer</p>
                     <p>Assisted Channels</p>
                 </div>
             </div>
             <div class="members">
                 <div class="pic"></div>
                 <div class="person">
-                    <h3>Pierce</h3>
-                    <p>UI/UX Designer</p>
-                    <p>Assisted Channels</p>
+                    <h3>John O'Rourke</h3>
+                    <p>IT Developer</p>
+                    <p>BPM</p>
                 </div>
             </div>
-            <div class="members">
-                <div class="pic"></div>
-                <div class="person">
-                    <h3>Pierce</h3>
-                    <p>UI/UX Designer</p>
-                    <p>Assisted Channels</p>
-                </div>
-            </div>
-            <div class="members">
-                <div class="pic"></div>
-                <div class="person">
-                    <h3>Pierce</h3>
-                    <p>UI/UX Designer</p>
-                    <p>Assisted Channels</p>
-                </div>
-            </div>
-            <div class="members">
-                <div class="pic"></div>
-                <div class="person">
-                    <h3>Pierce</h3>
-                    <p>UI/UX Designer</p>
-                    <p>Assisted Channels</p>
-                </div>
-            </div>
+            
             <div class="members">
                 <div class="pic"></div>
                 <div class="person">
@@ -333,8 +334,9 @@
                 for (var i = toggles.length - 1; i >= 0; i--) {
                     var toggle = toggles[i];
                     toggleHandler(toggle);
-                }
-                ;
+                };
+                
+                
 
                 function toggleHandler(toggle) {
                     toggle.addEventListener("click", function (e) {
@@ -342,6 +344,14 @@
                         (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
                     });
                 }
+                
+                 $("#menu").on('closed.zf.reveal', function () {
+                
+                    if($('.c-hamburger').hasClass('is-active')){
+                        $('.c-hamburger').removeClass('is-active');
+                        $('.target').text('Chat');
+                    }
+                });
 
 
                 javascriptCheck();

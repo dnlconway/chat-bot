@@ -432,7 +432,7 @@ div[role=main] section.demo {
 
 .right-callout {
     height: 100vh;
-    background-image: url('../img/left-bar.png');
+    background-image: url('http://www.whitestrailers.com/bot/img/left-bar.jpg');
     background-position: 92% 100%;
     background-color: #6962b0;
     background-repeat: no-repeat;
@@ -443,7 +443,7 @@ div[role=main] section.demo {
 }
 
 .lego {
-    background-image: url('../img/left-bar-kids.png');
+    background-image: url('http://www.whitestrailers.com/bot/img/left-bar-kids.jpg');
 }
 
 @keyframes animatedBackground {
@@ -838,7 +838,7 @@ ul.card-content {
 }
 
 #search, #menu {
-    background-image: url('../img/menu-bg.jpg');
+    background-image: url('http://www.whitestrailers.com/bot/img/menu-bg.jpg');
     background-size: cover;
 }
 
@@ -1052,7 +1052,7 @@ button.upload:hover, button.upload.hover {
 
 .smiley-icon .open {
     position:absolute;
-    background-image: url(../img/smiley.png);
+    background-image: url(http://www.whitestrailers.com/bot/img/smiley.png);
     width: 30px;
     height: 30px;
     background-size: 30px 60px;
@@ -1065,7 +1065,7 @@ button.upload:hover, button.upload.hover {
 
 .smiley-icon .close {
     position:absolute;
-    background-image: url(../img/smiley.png);
+    background-image: url(http://www.whitestrailers.com/bot/img/smiley.png);
     width: 30px;
     height: 29px;
     background-position: 50% 100%;
@@ -1331,7 +1331,7 @@ img.menu-logo {
 }
 
 #kid.reveal {
-    background-image: url(../img/chatty-bg.png);
+    background-image: url(http://www.whitestrailers.com/bot/img/chatty-bg.png);
     background-color: #6962b0;
     background-size: cover;
 }
@@ -1485,7 +1485,7 @@ img.menu-logo {
 }
 
 .x {
-    background: url(../img/x.png);
+    background: url(http://www.whitestrailers.com/bot/img/x.png);
     width: 30px;
     height: 30px;
     background-size: 100%;
@@ -1500,7 +1500,7 @@ img.menu-logo {
 }
 
 #team.reveal {
-    background-image: url(../img/pattern-team.png);
+    background-image: url(http://www.whitestrailers.com/bot/img/pattern-team.png);
     background-repeat: repeat;
     background-color: #6962b0;
     background-size: initial;
@@ -1519,9 +1519,10 @@ img.menu-logo {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: aliceblue;
     float: left;
     margin: 20px;
+    background-image: url(http://www.whitestrailers.com/bot/img/profile.svg);
+    background-size: 100%;
 }
 
 #team .members {
@@ -1621,6 +1622,17 @@ img.menu-logo {
 .owl-item {
     width: 330px !important;
 }
+
+.person p, .person h3 {
+    margin: 0;
+}
+
+.person {
+    margin: 20px;
+}
+
+
+
 
 @media screen and (max-width: 420px) {
   .chat-input {
