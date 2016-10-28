@@ -41,6 +41,7 @@ strong {
     width:100%;
     height:100%;
     z-index: 1999;
+    background-color: #6964ae;
 }
 
 
@@ -419,7 +420,7 @@ div[role=main] section.demo {
     background-color: #f8f7f7;
     height: 100vh;
     overflow: scroll;
-    padding: 30px 30px 90px;
+    padding: 30px 30px 200px;
     background-image: url('http://www.whitestrailers.com/bot/img/house.png');
     position: relative;
     background-repeat: repeat;
